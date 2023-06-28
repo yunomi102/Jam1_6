@@ -1,5 +1,13 @@
-#include"circle.h"
+#include"ishit.h"
 
+void updateishit(void)
+{
+	if (ishit(p, e) && p.time == 0)
+	{
+		p.hp -= 1;
+		p.time = 300;
+	}
+}
 bool ishit(circle c1, circle c2)
 {
 	double dx = c1.x - c2.x;
