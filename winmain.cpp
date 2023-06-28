@@ -1,4 +1,5 @@
-﻿#include "DxLib.h"
+﻿//ディレクター:茂木恵大
+#include "DxLib.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
