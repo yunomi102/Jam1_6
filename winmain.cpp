@@ -1,5 +1,6 @@
 ﻿//ディレクター:茂木恵大
-#include "DxLib.h"
+#include"DxLib.h"
+#include"player.h"
 
 void init(void);
 void update(void);
@@ -35,14 +36,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 }
 void init(void)
 {
-
+	initplayer();
 }
 void update(void)
 {
-
+	updateplayer();
 	draw();
 }
 void draw(void)
 {
-
+	drawplayer();
 }
