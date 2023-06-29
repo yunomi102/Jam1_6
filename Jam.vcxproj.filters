@@ -15,9 +15,6 @@
     <ClCompile Include="player.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="circle.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
