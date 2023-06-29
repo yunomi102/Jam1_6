@@ -1,4 +1,5 @@
 ﻿//ディレクター:茂木恵大
+//サブディレクター:柏木春人
 #include"DxLib.h"
 #include"player.h"
 #include"enemy.h"
