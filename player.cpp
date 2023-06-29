@@ -1,6 +1,7 @@
 #include"player.h"
 
 circle p;
+int playerimg;
 
 void initplayer(void)
 {
@@ -8,11 +9,13 @@ void initplayer(void)
 	p.y = 300;
 	p.vx = 1.5;
 	p.vy = 2;
-	p.r = 5;
+	p.r = 20;
 	p.c = GetColor(255, 255, 255);
 	p.fill = true;
+	p.enable = true;
 	p.hp = 2;
 	p.time = 0;
+	playerimg = LoadGraph("Hotate01-removebg-preview.png");
 }
 void updateplayer(void)
 {
@@ -59,6 +62,10 @@ void drawplayer(void)
 	{
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
 	}
-	DrawCircle(p.x, p.y, p.r, p.c, p.fill);
+	if (p.enable == true)
+	{
+		//DrawCircle(p.x, p.y, p.r, p.c, p.fill);
+		DrawExtendGraph(p.x - 25, p.y - 45, p.x + 35, p.y + 45, playerimg, true);
+	}
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include"DxLib.h"
 #include"player.h"
+#include"playershot.h"
 #include"enemy.h"
 #include"circle.h"
 
