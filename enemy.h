@@ -2,7 +2,8 @@
 #include"DxLib.h"
 #include"circle.h"
 
-extern circle e;
+const int enemynum = 1;
+extern circle ene1[enemynum];
 
 void initenemy(void);
 void updateenemy(void);

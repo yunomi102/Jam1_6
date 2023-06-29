@@ -2,10 +2,13 @@
 
 void updateishit(void)
 {
-	if (ishit(p, e) && p.time == 0)
+	for (int i = 0; i < enemynum; i++)
 	{
-		p.hp -= 1;
-		p.time = 300;
+		if (ishit(p, ene1[i]) && p.time == 0)
+		{
+			p.hp -= 1;
+			p.time = 300;
+		}
 	}
 }
 bool ishit(circle c1, circle c2)

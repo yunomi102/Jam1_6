@@ -1,14 +1,17 @@
 #include"enemy.h"
 
-circle e;
+circle ene1[enemynum];
 
 void initenemy(void)
 {
-	e.x = 600;
-	e.y = 300;
-	e.r = 5;
-	e.c = GetColor(255, 0, 0);
-	e.fill = true;
+	for(int i=0;i< enemynum;i++)
+	{
+		ene1[i].x = 600;
+		ene1[i].y = 300;
+		ene1[i].r = 5;
+		ene1[i].c = GetColor(255, 0, 0);
+		ene1[i].fill = true;
+	}
 }
 void updateenemy(void)
 {
@@ -16,5 +19,8 @@ void updateenemy(void)
 }
 void drawenemy(void)
 {
-	DrawCircle(e.x, e.y, e.r, e.c, e.fill);
+	for (int i = 0; i < enemynum; i++)
+	{
+		DrawCircle(ene1[i].x, ene1[i].y, ene1[i].r, ene1[i].c, ene1[i].fill);
+	}
 }
