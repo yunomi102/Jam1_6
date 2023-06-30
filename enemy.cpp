@@ -41,12 +41,10 @@ void drawenemy(void)
 	{
 		if (ene1[i].enable == true)
 		{
-			//(ene1[i].x, ene1[i].y, ene1[i].r, ene1[i].c, ene1[i].fill);
 			DrawExtendGraph(ene1[i].x - 30, ene1[i].y - 45, ene1[i].x + 30, ene1[i].y + 45, enemy1img, ene1[i].fill);
 		}
 		if (ene2[i].enable == true)
 		{
-			//DrawCircle(ene2[i].x, ene2[i].y, ene2[i].r, ene2[i].c, ene2[i].fill);
 			DrawExtendGraph(ene2[i].x - 50, ene2[i].y - 45, ene2[i].x + 40, ene2[i].y + 25, enemy2img, ene2[i].fill);
 		}
 	}

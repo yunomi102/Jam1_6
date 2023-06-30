@@ -64,7 +64,6 @@ void drawplayer(void)
 	}
 	if (p.enable == true)
 	{
-		//DrawCircle(p.x, p.y, p.r, p.c, p.fill);
 		DrawExtendGraph(p.x - 25, p.y - 45, p.x + 35, p.y + 45, playerimg, true);
 	}
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);

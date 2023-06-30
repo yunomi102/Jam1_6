@@ -11,7 +11,7 @@ void updateishit(void)
 			{
 				pshot[i].enable = false;
 				ene1[j].hp -= pshot[i].damage;
-				if(ene1[j].hp<=0)
+				if (ene1[j].hp <= 0)
 				{
 					ene1[j].enable = false;
 				}
@@ -33,7 +33,7 @@ void updateishit(void)
 	}
 	for (int i = 0; i < enemynum1; i++)
 	{
-		if (ishit(p, ene1[i]) && p.time == 0 && p.enable == true)
+		if (ishit(p, ene1[i]) && p.time == 0 && p.enable == true && ene2[i].enable == true)
 		{
 			p.hp -= 1;
 			p.time = 300;
@@ -41,7 +41,7 @@ void updateishit(void)
 	}
 	for (int i = 0; i < enemynum2; i++)
 	{
-		if (ishit(p, ene2[i]) && p.time == 0 && p.enable == true)
+		if (ishit(p, ene2[i]) && p.time == 0 && p.enable == true && ene2[i].enable == true)
 		{
 			p.hp -= 1;
 			p.time = 300;
