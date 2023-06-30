@@ -8,13 +8,13 @@ int pshotcooltime;
 int invincibletime;
 int enemy1hp;
 int enemy2hp;
+int enemy3hp;
 int hpuptime;
 
 void initsetting(void)
 {
-	//当たり判定
-	collision = false;
-
+	
+	collision = false;	   //当たり判定
 	playerhp = 2;          //プレイヤーのHP
 	playershotdamage1 = 20;//プレイヤーショット1のダメージ
 	playershotdamage2 = 1; //プレイヤーショット2のダメージ
@@ -22,6 +22,7 @@ void initsetting(void)
 	invincibletime = 300;  //プレイヤーの無敵時間
 	enemy1hp = 60;         //敵1のHP
 	enemy2hp = 60;         //敵2のHP
+	enemy3hp = 60;         //敵3のHP
 }
 void updatesetting(void)
 {

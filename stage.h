@@ -16,6 +16,8 @@ enum stagetype
 	ST4
 };
 
+extern stagetype STtype;
+
 extern stage stage1[2];
 extern stage stage2[2];
 extern stage stage3[2];

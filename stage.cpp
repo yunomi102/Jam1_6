@@ -7,11 +7,6 @@ stage stage2[2];
 stage stage3[2];
 stage stage4[2];
 
-
-//int changestage[changenum];
-//double x[changenum];
-//double y[changenum];
-
 circle cs[changenum];
 bool change;
 bool push;
@@ -132,6 +127,10 @@ void drawstage(void)
 			DrawExtendGraph(stage1[1].x, stage1[1].y, stage1[1].x + 800, stage1[1].y + 600, stage1[1].stageimg, true);
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
+		else if (cscount == 255)
+		{
+			change = false;
+		}
 	}
 	else if (STtype == ST3)
 	{
@@ -153,6 +152,10 @@ void drawstage(void)
 			DrawExtendGraph(stage2[0].x, stage2[0].y, stage2[0].x + 1200, stage2[0].y + 600, stage2[0].stageimg, true);
 			DrawExtendGraph(stage2[1].x, stage2[1].y, stage2[1].x + 1200, stage2[1].y + 600, stage2[1].stageimg, true);
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		}
+		else if (cscount == 255)
+		{
+			change = false;
 		}
 	}
 	else if (STtype == ST4)
@@ -176,6 +179,10 @@ void drawstage(void)
 			DrawExtendGraph(stage3[1].x, stage3[1].y, stage3[1].x + 800, stage3[1].y + 600, stage3[1].stageimg, true);
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
+		else if (cscount == 255)
+		{
+			change = false;
+		}
 	}
 }
 void initchangestage(void)
@@ -189,43 +196,26 @@ void initchangestage(void)
 		cs[i].c = GetColor(25, 25, GetRand(200) + 55);
 		cs[i].fill = false;
 		cs[i].enable = true;
+		change = true;
 	}
-	/*
-		for (int i = 0; i < changenum; i++)
-	{
-		changestage[i] = LoadGraph("awa03.png");
-		x[i] = GetRand(700) + 850;
-		y[i] = GetRand(500) - 150;
-	}
-	*/
 }
 void updatechangestage(void)
 {
-	if (CheckHitKey(KEY_INPUT_RETURN) == 1)
-	{
-		initchangestage();
-		change = true;
-
-		if (STtype == ST1 && push == false)
+		if (STtype == ST1 && enemycount1==0)
 		{
+			initchangestage();
 			STtype = ST2;
-			push = true;
 		}
-		else if (STtype == ST2 && push == false)
+		else if (STtype == ST2 && enemycount2==0)
 		{
+			initchangestage();
 			STtype = ST3;
-			push = true;
 		}
-		else if (STtype == ST3 && push == false)
+		else if (STtype == ST3 && enemycount3==0)
 		{
+			initchangestage();
 			STtype = ST4;
-			push = true;
 		}
-	}
-	else
-	{
-		push = false;
-	}
 	if (change == true)
 	{
 		for (int i = 0; i < changenum; i++)
@@ -257,16 +247,6 @@ void updatechangestage(void)
 			}
 		}
 	}
-	/*
-		if (change == true)
-	{
-		for (int i = 0; i < changenum; i++)
-		{
-			x[i] -= 5;
-			y[i] += 0;
-		}
-	}
-	*/
 }
 void drawchangestage(void)
 {
@@ -283,14 +263,4 @@ void drawchangestage(void)
 			}
 		}
 	}
-	DrawFormatString(p.x - 50, p.y + 100, GetColor(255, 255, 0), "ƒJƒEƒ“ƒg%d", cscount);
-	/*
-		if (change == true)
-	{
-		for (int i = 0; i < changenum; i++)
-		{
-			DrawGraph(x[i], y[i], changestage[i], true);
-		}
-	}
-	*/
 }

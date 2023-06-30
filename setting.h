@@ -16,6 +16,7 @@ extern int pshotcooltime;
 extern int invincibletime;
 extern int enemy1hp;
 extern int enemy2hp;
+extern int enemy3hp;
 
 void initsetting(void);
 void updatesetting(void);

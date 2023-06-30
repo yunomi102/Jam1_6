@@ -35,19 +35,29 @@ void drawgame(void)
 				DrawCircle(pshot2[i].x, pshot2[i].y, pshot2[i].r, pshot2[i].c, pshot2[i].fill);
 			}
 		}
-		for (int i = 0; i < enemynum; i++)
+		for (int i = 0; i < enemynum1; i++)
 		{
 			if (ene1[i].enable == true)
 			{
 				DrawCircle(ene1[i].x, ene1[i].y, ene1[i].r, ene1[i].c, ene1[i].fill);
 			}
+		}
+		for (int i = 0; i < enemynum2; i++)
+		{
 			if (ene2[i].enable == true)
 			{
 				DrawCircle(ene2[i].x, ene2[i].y, ene2[i].r, ene2[i].c, ene2[i].fill);
 			}
 		}
+		for (int i = 0; i < enemynum3; i++)
+		{
+			if (ene3[i].enable == true)
+			{
+				DrawCircle(ene3[i].x, ene3[i].y, ene3[i].r, ene3[i].c, ene3[i].fill);
+			}
+		}
 	}
 	DrawFormatString(p.x - 30, p.y - 50, white, "体力%d", p.hp);
 	DrawFormatString(p.x - 40, p.y + 40, white, "無敵時間%d", p.time);
-	DrawFormatString(p.x - 50, p.y + 55, white, "クールタイム%d", pshot1[0].time);
+	DrawFormatString(p.x - 50, p.y + 55, white, "クールタイム%d", pshot1[0].time);	
 }
