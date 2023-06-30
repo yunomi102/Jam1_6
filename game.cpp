@@ -18,7 +18,7 @@ void updategame(void)
 }
 void drawgame(void)
 {
-	if(collision==true)
+	if (collision == true)
 	{
 		if (p.enable == true)
 		{
@@ -37,7 +37,7 @@ void drawgame(void)
 		}
 		for (int i = 0; i < enemynum; i++)
 		{
-			if(ene1[i].enable==true)
+			if (ene1[i].enable == true)
 			{
 				DrawCircle(ene1[i].x, ene1[i].y, ene1[i].r, ene1[i].c, ene1[i].fill);
 			}
@@ -47,8 +47,7 @@ void drawgame(void)
 			}
 		}
 	}
-	DrawFormatString(100, 100, white, "体力%d", p.hp);
-	DrawFormatString(100, 150, white, "無敵時間%d", p.time);
-	DrawFormatString(100, 200, white, "クールタイム%d", pshot1[0].time);
-
+	DrawFormatString(p.x - 30, p.y - 50, white, "体力%d", p.hp);
+	DrawFormatString(p.x - 40, p.y + 40, white, "無敵時間%d", p.time);
+	DrawFormatString(p.x - 50, p.y + 55, white, "クールタイム%d", pshot1[0].time);
 }

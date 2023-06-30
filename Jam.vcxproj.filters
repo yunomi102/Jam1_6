@@ -27,10 +27,10 @@
     <ClCompile Include="playershot.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="scene.cpp">
+    <ClCompile Include="setting.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="setting.cpp">
+    <ClCompile Include="stage.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,10 +53,10 @@
     <ClInclude Include="playershot.h">
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
-    <ClInclude Include="scene.h">
+    <ClInclude Include="setting.h">
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
-    <ClInclude Include="setting.h">
+    <ClInclude Include="stage.h">
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
   </ItemGroup>

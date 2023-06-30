@@ -37,28 +37,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 void init(void)
 {
 	initsetting();
-	initscene();
 	initplayer();
 	initplayershot();
 	initenemy();
+	initstage();
+	initchangestage();
 	initgame();
 }
 void update(void)
 {
-	updatescene();
+	updatesetting();
 	updateplayer();
 	updateplayershot();
 	updateenemy();
+	updatestage();
+	updatechangestage();
 	updateishit();
 	updategame();
-	updatesetting();
+	
 	draw();
 }
 void draw(void)
 {
-	drawscene();
+	drawstage();
 	drawplayer();
 	drawplayershot();
 	drawenemy();
+	drawchangestage();
 	drawgame();
 }
