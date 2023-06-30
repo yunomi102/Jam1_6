@@ -6,7 +6,7 @@ bool collision;
 
 void initgame(void)
 {
-	collision = true;
+	collision = false;
 	white = GetColor(255, 255, 255);
 	gameoverflag = false;
 }
