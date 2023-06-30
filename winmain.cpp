@@ -1,6 +1,6 @@
 ﻿//ディレクター:茂木恵大
-#include"DxLib.h"
-#include"player.h"
+//サブディレクター:柏木春人
+#include"setting.h"
 
 void init(void);
 void update(void);
@@ -36,14 +36,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 }
 void init(void)
 {
+	initsetting();
+	initscene();
 	initplayer();
+	initplayershot();
+	initenemy();
+	initgame();
 }
 void update(void)
 {
+	updatescene();
 	updateplayer();
+	updateplayershot();
+	updateenemy();
+	updateishit();
+	updategame();
 	draw();
 }
 void draw(void)
 {
+	drawscene();
 	drawplayer();
+	drawplayershot();
+	drawenemy();
+	drawgame();
 }

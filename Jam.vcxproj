@@ -86,13 +86,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="circle.cpp" />
+    <ClCompile Include="playershot.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="ishit.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="setting.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="playershot.h" />
+    <ClInclude Include="scene.h" />
     <ClInclude Include="circle.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="ishit.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="setting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
