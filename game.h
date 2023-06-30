@@ -1,6 +1,7 @@
 #pragma once
 #include"DxLib.h"
 #include"player.h"
+#include"playershot.h"
 
 extern bool gameoverflag;
 

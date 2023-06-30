@@ -18,5 +18,7 @@ void updategame(void)
 }
 void drawgame(void)
 {
-	DrawFormatString(700, 200, white, "体力%d", p.hp);
+	DrawFormatString(100, 100, white, "体力%d", p.hp);
+	DrawFormatString(100, 150, white, "無敵時間%d", p.time);
+	DrawFormatString(100, 200, white, "クールタイム%d", pshot[0].time);
 }
