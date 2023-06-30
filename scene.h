@@ -9,6 +9,7 @@ struct scene
 };
 
 extern scene stage1[2];
+const int changenum = 20;
 
 void initscene(void);
 void updatescene(void);
