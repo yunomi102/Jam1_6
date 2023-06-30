@@ -26,10 +26,10 @@ void initstage(void)
 	stage1[1].stageimg = LoadGraph("stage01Re.png");
 	stage1[1].x = 800;
 	stage1[1].y = 0;
-	stage2[0].stageimg = LoadGraph("stage02.jpg");
+	stage2[0].stageimg = LoadGraph("stage02.png");
 	stage2[0].x = 0;
 	stage2[0].y = 0;
-	stage2[1].stageimg = LoadGraph("stage02Re.jpg");
+	stage2[1].stageimg = LoadGraph("stage02Re.png");
 	stage2[1].x = 1200;
 	stage2[1].y = 0;
 	stage3[0].stageimg = LoadGraph("stage03.png");
@@ -38,10 +38,10 @@ void initstage(void)
 	stage3[1].stageimg = LoadGraph("stage03Re.png");
 	stage3[1].x = 800;
 	stage3[1].y = 0;
-	stage4[0].stageimg = LoadGraph("stage04.jpg");
+	stage4[0].stageimg = LoadGraph("stage04.png");
 	stage4[0].x = 0;
 	stage4[0].y = 0;
-	stage4[1].stageimg = LoadGraph("stage04Re.jpg");
+	stage4[1].stageimg = LoadGraph("stage04Re.png");
 	stage4[1].x = 800;
 	stage4[1].y = 0;
 	push = false;
@@ -64,8 +64,8 @@ void updatestage(void)
 	}
 	else if (STtype == ST2)
 	{
-		stage2[0].x -= 2;
-		stage2[1].x -= 2;
+		stage2[0].x -= 1;
+		stage2[1].x -= 1;
 		if (stage2[0].x == -1200)
 		{
 			stage2[0].x = 1200;
@@ -137,8 +137,8 @@ void drawstage(void)
 		DrawExtendGraph(stage3[1].x, stage3[1].y, stage3[1].x + 800, stage3[1].y + 600, stage3[1].stageimg, true);
 		if (cscount != 255)
 		{
-			stage2[0].x -= 2;
-			stage2[1].x -= 2;
+			stage2[0].x -= 1;
+			stage2[1].x -= 1;
 			if (stage2[0].x == -1200)
 			{
 				stage2[0].x = 1200;

@@ -15,7 +15,7 @@ void initplayer(void)
 	p.enable = true;
 	p.hp = playerhp;
 	p.time = 0;
-	playerimg = LoadGraph("Hotate01-removebg-preview.png");
+	playerimg = LoadGraph("player.png");
 }
 void updateplayer(void)
 {
