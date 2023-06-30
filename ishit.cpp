@@ -30,6 +30,7 @@ void updateishit(void)
 				if (ene1[j].hp <= 0)
 				{
 					ene1[j].enable = false;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
 			if (ishit(pshot2[i], ene1[j]) &&
@@ -39,6 +40,7 @@ void updateishit(void)
 				if (ene1[j].hp <= 0)
 				{
 					ene1[j].enable = false;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
 		}

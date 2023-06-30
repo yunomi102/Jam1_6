@@ -5,6 +5,7 @@ circle ene2[enemynum2];
 
 int enemy1img;
 int enemy2img;
+int enemydownse;
 
 void initenemy(void)
 {
@@ -18,6 +19,7 @@ void initenemy(void)
 		ene1[i].fill = true;
 		ene1[i].enable = true;
 	}
+	enemy1img = LoadGraph("enemy01.png");
 	for (int i = 0; i < enemynum1; i++)
 	{
 		ene2[i].hp = enemy2hp;
@@ -28,8 +30,8 @@ void initenemy(void)
 		ene2[i].fill = true;
 		ene2[i].enable = true;
 	}
-	enemy1img = LoadGraph("enemy01.png");
 	enemy2img = LoadGraph("enemy02.png");
+	enemydownse = LoadSoundMem("maou_se_8bit08.mp3");
 }
 void updateenemy(void)
 {

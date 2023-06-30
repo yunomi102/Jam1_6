@@ -16,6 +16,7 @@ circle cs[changenum];
 bool change;
 bool push;
 int cscount;
+int stagechangeimg;
 
 void initstage(void)
 {
@@ -46,6 +47,7 @@ void initstage(void)
 	stage4[1].y = 0;
 	push = false;
 	change = false;
+	stagechangeimg = LoadGraph("Awa01.png");
 }
 void updatestage(void)
 {
@@ -113,7 +115,7 @@ void drawstage(void)
 	{
 		DrawExtendGraph(stage2[0].x, stage2[0].y, stage2[0].x + 1200, stage2[0].y + 600, stage2[0].stageimg, true);
 		DrawExtendGraph(stage2[1].x, stage2[1].y, stage2[1].x + 1200, stage2[1].y + 600, stage2[1].stageimg, true);
-		if(cscount!=255)
+		if (cscount != 255)
 		{
 			stage1[0].x -= 1;
 			stage1[1].x -= 1;
@@ -181,10 +183,10 @@ void initchangestage(void)
 	cscount = 0;
 	for (int i = 0; i < changenum; i++)
 	{
-		cs[i].x = GetRand(1200)+850;
-		cs[i].y = GetRand(580)+10;
-		cs[i].r = GetRand(70)+10;
-		cs[i].c = GetColor(25, 25, GetRand(200)+55);
+		cs[i].x = GetRand(1600) + 850;
+		cs[i].y = GetRand(800) - 100;
+		cs[i].r = GetRand(70) + 10;
+		cs[i].c = GetColor(25, 25, GetRand(200) + 55);
 		cs[i].fill = false;
 		cs[i].enable = true;
 	}
@@ -203,7 +205,7 @@ void updatechangestage(void)
 	{
 		initchangestage();
 		change = true;
-		
+
 		if (STtype == ST1 && push == false)
 		{
 			STtype = ST2;
@@ -248,7 +250,7 @@ void updatechangestage(void)
 					cs[i].x += 0.5;
 				}
 			}
-			if (cs[i].x <= -50&& cs[i].enable == true)
+			if (cs[i].x <= -50 && cs[i].enable == true)
 			{
 				cs[i].enable = false;
 				cscount += 1;
@@ -272,15 +274,16 @@ void drawchangestage(void)
 	{
 		for (int i = 0; i < changenum; i++)
 		{
-			if(cs[i].enable == true)
+			if (cs[i].enable == true)
 			{
-				SetDrawBlendMode(DX_BLENDMODE_ADD, 255);
-				DrawCircle(cs[i].x, cs[i].y, cs[i].r, cs[i].c, cs[i].fill, cs[i].r / 10);
+				SetDrawBlendMode(DX_BLENDMODE_ADD, 125);
+
+				DrawExtendGraph(cs[i].x - cs[i].r, cs[i].y - cs[i].r, cs[i].x + cs[i].r, cs[i].y + cs[i].r, stagechangeimg, true);
 				SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 			}
 		}
 	}
-	DrawFormatString(p.x - 50, p.y + 100, GetColor(255,255,0), "カウント%d", cscount);
+	DrawFormatString(p.x - 50, p.y + 100, GetColor(255, 255, 0), "カウント%d", cscount);
 	/*
 		if (change == true)
 	{

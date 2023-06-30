@@ -43,6 +43,7 @@ void init(void)
 	initstage();
 	initchangestage();
 	initgame();
+	PlayMusic("maou_game_rock18.mp3", DX_PLAYTYPE_LOOP);
 }
 void update(void)
 {

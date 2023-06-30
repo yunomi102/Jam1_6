@@ -2,8 +2,9 @@
 
 circle pshot1[playershotnum];
 circle pshot2[playershotnum];
-int enemyshotimg1;
-int enemyshotimg2;
+int playershotimg1;
+int playershotimg2;
+int shotse;
 
 void initplayershot(void)
 {
@@ -16,7 +17,7 @@ void initplayershot(void)
 		pshot1[i].enable = false;
 		pshot1[0].time = pshotcooltime;
 	}
-	enemyshotimg1 = LoadGraph("shot01.png");
+	playershotimg1 = LoadGraph("shot01.png");
 	for (int i = 0; i < playershotnum; i++)
 	{
 		pshot2[i].damage = playershotdamage2;
@@ -26,7 +27,8 @@ void initplayershot(void)
 		pshot2[i].enable = false;
 		pshot2[0].time = pshotcooltime;
 	}
-	enemyshotimg2 = LoadGraph("shot02.png");
+	playershotimg2 = LoadGraph("shot02.png");
+	shotse = LoadSoundMem("maou_se_8bit16.mp3");
 }
 void updateplayershot(void)
 {
@@ -65,6 +67,7 @@ void updateplayershot(void)
 		{
 			if (pshot2[i].enable == false && p.enable == true)
 			{
+				PlaySoundMem(shotse, DX_PLAYTYPE_BACK);
 				shot2(350);
 				shot2(0);
 				shot2(10);
@@ -79,6 +82,7 @@ void updateplayershot(void)
 		{
 			if (pshot1[i].enable == false && p.enable == true)
 			{
+				PlaySoundMem(shotse, DX_PLAYTYPE_BACK);
 				shot1(345);
 				shot1(0);
 				shot1(15);
@@ -94,11 +98,11 @@ void drawplayershot(void)
 	{
 		if (pshot1[i].enable == true)
 		{
-			DrawExtendGraph(pshot1[i].x - 20, pshot1[i].y - 20, pshot1[i].x + 20, pshot1[i].y + 20, enemyshotimg1, true);
+			DrawExtendGraph(pshot1[i].x - 20, pshot1[i].y - 20, pshot1[i].x + 20, pshot1[i].y + 20, playershotimg1, true);
 		}
 		if (pshot2[i].enable == true)
 		{
-			DrawExtendGraph(pshot2[i].x - 20, pshot2[i].y - 20, pshot2[i].x + 20, pshot2[i].y + 20, enemyshotimg2, true);
+			DrawExtendGraph(pshot2[i].x - 20, pshot2[i].y - 20, pshot2[i].x + 20, pshot2[i].y + 20, playershotimg2, true);
 		}
 	}
 }
