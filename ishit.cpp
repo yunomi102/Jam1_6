@@ -36,7 +36,7 @@ void updateishit(void)
 		if (ishit(p, ene1[i]) && p.time == 0 && p.enable == true && ene2[i].enable == true)
 		{
 			p.hp -= 1;
-			p.time = 300;
+			p.time = invincibletime;
 		}
 	}
 	for (int i = 0; i < enemynum2; i++)
@@ -44,7 +44,7 @@ void updateishit(void)
 		if (ishit(p, ene2[i]) && p.time == 0 && p.enable == true && ene2[i].enable == true)
 		{
 			p.hp -= 1;
-			p.time = 300;
+			p.time = invincibletime;
 		}
 	}
 }

@@ -13,7 +13,7 @@ void initplayer(void)
 	p.c = GetColor(255, 255, 255);
 	p.fill = true;
 	p.enable = true;
-	p.hp = 2;
+	p.hp = playerhp;
 	p.time = 0;
 	playerimg = LoadGraph("Hotate01-removebg-preview.png");
 }

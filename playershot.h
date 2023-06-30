@@ -1,8 +1,5 @@
 #pragma once
-#include"DxLib.h"
-#include"player.h"
-#include"enemy.h"
-#include"game.h"
+#include"setting.h"
 #include<math.h>
 
 const int playershotnum = 100;

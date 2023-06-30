@@ -1,6 +1,5 @@
 #pragma once
-#include"DxLib.h"
-#include"circle.h"
+#include"setting.h"
 
 extern circle p;
 

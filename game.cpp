@@ -2,11 +2,9 @@
 
 int white;
 bool gameoverflag;
-bool collision;
 
 void initgame(void)
 {
-	collision = false;
 	white = GetColor(255, 255, 255);
 	gameoverflag = false;
 }

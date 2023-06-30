@@ -10,7 +10,7 @@ void initenemy(void)
 {
 	for (int i = 0; i < enemynum1; i++)
 	{
-		ene1[i].hp = 30;
+		ene1[i].hp = enemy1hp;
 		ene1[i].x = 600;
 		ene1[i].y = 200;
 		ene1[i].r = 20;
@@ -20,7 +20,7 @@ void initenemy(void)
 	}
 	for (int i = 0; i < enemynum1; i++)
 	{
-		ene2[i].hp = 30;
+		ene2[i].hp = enemy2hp;
 		ene2[i].x = 600;
 		ene2[i].y = 400;
 		ene2[i].r = 25;

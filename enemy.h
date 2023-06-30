@@ -1,6 +1,5 @@
 #pragma once
-#include"DxLib.h"
-#include"circle.h"
+#include"setting.h"
 
 const int enemynum = 1;
 const int enemynum1 = enemynum;

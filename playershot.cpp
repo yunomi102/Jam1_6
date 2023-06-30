@@ -1,14 +1,12 @@
 #include"playershot.h"
 
 circle pshot[playershotnum];
-int pshotcooltime;
 
 void initplayershot(void)
 {
-	pshotcooltime = 100;
 	for (int i = 0; i < playershotnum; i++)
 	{
-		pshot[i].damage = 10;
+		pshot[i].damage = playershotdamage;
 		pshot[i].r = 10;
 		pshot[i].c = GetColor(0, 255, 155);
 		pshot[i].fill = true;
