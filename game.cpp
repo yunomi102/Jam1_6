@@ -12,15 +12,29 @@ void updategame(void)
 {
 	if (p.hp == 0)
 	{
-		gameoverflag = true;
 		p.enable = false;
+		gameoverflag = true;
 	}
 }
 void drawgame(void)
 {
 	if(collision==true)
 	{
-		DrawCircle(p.x, p.y, p.r, p.c, p.fill);
+		if (p.enable == true)
+		{
+			DrawCircle(p.x, p.y, p.r, p.c, p.fill);
+		}
+		for (int i = 0; i < playershotnum; i++)
+		{
+			if (pshot1[i].enable == true)
+			{
+				DrawCircle(pshot1[i].x, pshot1[i].y, pshot1[i].r, pshot1[i].c, pshot1[i].fill);
+			}
+			if (pshot2[i].enable == true)
+			{
+				DrawCircle(pshot2[i].x, pshot2[i].y, pshot2[i].r, pshot2[i].c, pshot2[i].fill);
+			}
+		}
 		for (int i = 0; i < enemynum; i++)
 		{
 			if(ene1[i].enable==true)
@@ -35,6 +49,6 @@ void drawgame(void)
 	}
 	DrawFormatString(100, 100, white, "体力%d", p.hp);
 	DrawFormatString(100, 150, white, "無敵時間%d", p.time);
-	DrawFormatString(100, 200, white, "クールタイム%d", pshot[0].time);
+	DrawFormatString(100, 200, white, "クールタイム%d", pshot1[0].time);
 
 }

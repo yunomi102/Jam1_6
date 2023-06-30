@@ -51,6 +51,7 @@ void update(void)
 	updateenemy();
 	updateishit();
 	updategame();
+	updatesetting();
 	draw();
 }
 void draw(void)
