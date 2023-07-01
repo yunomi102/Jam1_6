@@ -13,5 +13,5 @@ struct circle
 	bool enable;
 	int hp;
 	int damage;
-	int time;
+	double time;
 };

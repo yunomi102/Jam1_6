@@ -15,8 +15,25 @@ extern int playershotdamage2;
 extern int pshotcooltime;
 extern int invincibletime;
 extern int enemy1hp;
+extern double enemynum1x[10];
+extern double enemynum1y[10];
 extern int enemy2hp;
+extern double enemynum2x[10];
+extern double enemynum2y[10];
 extern int enemy3hp;
+extern double enemynum3x[10];
+extern double enemynum3y[10];
+extern int enemy4hp;
+extern double enemynum4x[10];
+extern double enemynum4y[10];
+extern int enemy5hp;
+extern double enemynum5x[10];
+extern double enemynum5y[10];
 
 void initsetting(void);
 void updatesetting(void);
+
+
+
+
+

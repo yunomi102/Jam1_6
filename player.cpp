@@ -1,6 +1,7 @@
 #include"player.h"
 
 circle p;
+
 int playerimg;
 
 void initplayer(void)
@@ -19,36 +20,39 @@ void initplayer(void)
 }
 void updateplayer(void)
 {
-	if (CheckHitKey(KEY_INPUT_W) == 1 && p.y > 0)
+	if (p.enable == true)
 	{
-		p.y -= p.vy;
-		if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+		if (CheckHitKey(KEY_INPUT_W) == 1 && p.y > 0)
 		{
 			p.y -= p.vy;
+			if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+			{
+				p.y -= p.vy;
+			}
 		}
-	}
-	if (CheckHitKey(KEY_INPUT_S) == 1 && p.y < 599)
-	{
-		p.y += p.vy;
-		if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+		if (CheckHitKey(KEY_INPUT_S) == 1 && p.y < 599)
 		{
 			p.y += p.vy;
+			if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+			{
+				p.y += p.vy;
+			}
 		}
-	}
-	if (CheckHitKey(KEY_INPUT_A) == 1 && p.x > 0)
-	{
-		p.x -= p.vx;
-		if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+		if (CheckHitKey(KEY_INPUT_A) == 1 && p.x > 0)
 		{
 			p.x -= p.vx;
+			if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+			{
+				p.x -= p.vx;
+			}
 		}
-	}
-	if (CheckHitKey(KEY_INPUT_D) == 1 && p.x < 799)
-	{
-		p.x += p.vx;
-		if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+		if (CheckHitKey(KEY_INPUT_D) == 1 && p.x < 799)
 		{
 			p.x += p.vx;
+			if (CheckHitKey(KEY_INPUT_LSHIFT) == 1)
+			{
+				p.x += p.vx;
+			}
 		}
 	}
 	if (p.time > 0)

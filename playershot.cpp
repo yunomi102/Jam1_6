@@ -2,12 +2,15 @@
 
 circle pshot1[playershotnum];
 circle pshot2[playershotnum];
+
 int playershotimg1;
 int playershotimg2;
+
 int shotse;
 
 void initplayershot(void)
 {
+	pshot1[0].time = 0;
 	for (int i = 0; i < playershotnum; i++)
 	{
 		pshot1[i].damage = playershotdamage1;
@@ -15,7 +18,6 @@ void initplayershot(void)
 		pshot1[i].c = GetColor(0, 255, 155);
 		pshot1[i].fill = true;
 		pshot1[i].enable = false;
-		pshot1[0].time = pshotcooltime;
 	}
 	playershotimg1 = LoadGraph("shot01.png");
 	for (int i = 0; i < playershotnum; i++)
@@ -25,7 +27,6 @@ void initplayershot(void)
 		pshot2[i].c = GetColor(0, 255, 155);
 		pshot2[i].fill = true;
 		pshot2[i].enable = false;
-		pshot2[0].time = pshotcooltime;
 	}
 	playershotimg2 = LoadGraph("shot02.png");
 	shotse = LoadSoundMem("maou_se_8bit16.mp3");
@@ -98,11 +99,15 @@ void drawplayershot(void)
 	{
 		if (pshot1[i].enable == true)
 		{
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, 250);
 			DrawExtendGraph(pshot1[i].x - 20, pshot1[i].y - 20, pshot1[i].x + 20, pshot1[i].y + 20, playershotimg1, true);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 		if (pshot2[i].enable == true)
 		{
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255);
 			DrawExtendGraph(pshot2[i].x - 20, pshot2[i].y - 20, pshot2[i].x + 20, pshot2[i].y + 20, playershotimg2, true);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 	}
 }

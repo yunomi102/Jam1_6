@@ -54,7 +54,7 @@ void update(void)
 	updatechangestage();
 	updateishit();
 	updategame();
-	
+
 	draw();
 }
 void draw(void)

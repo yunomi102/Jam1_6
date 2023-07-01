@@ -1,12 +1,11 @@
 #pragma once
 #include"setting.h"
 
-const int enemynum = 10;
-const int enemynum1 = enemynum;
-const int enemynum2 = enemynum;
-const int enemynum3 = enemynum;
-const int enemynum4 = enemynum;
-const int enemynum5 = enemynum;
+const int enemynum1 = 10;
+const int enemynum2 = 10;
+const int enemynum3 = 10;
+const int enemynum4 = 10;
+const int enemynum5 = 10;
 extern circle ene1[enemynum1];
 extern circle ene2[enemynum2];
 extern circle ene3[enemynum3];

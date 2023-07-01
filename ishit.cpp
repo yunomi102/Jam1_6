@@ -18,6 +18,30 @@ void updateishit(void)
 			p.time = invincibletime;
 		}
 	}
+	for (int i = 0; i < enemynum3; i++)
+	{
+		if (ishit(p, ene3[i]) && p.time == 0 && p.enable == true && ene3[i].enable == true)
+		{
+			p.hp -= 1;
+			p.time = invincibletime;
+		}
+	}
+	for (int i = 0; i < enemynum4; i++)
+	{
+		if (ishit(p, ene4[i]) && p.time == 0 && p.enable == true && ene4[i].enable == true)
+		{
+			p.hp -= 1;
+			p.time = invincibletime;
+		}
+	}
+	for (int i = 0; i < enemynum5; i++)
+	{
+		if (ishit(p, ene5[i]) && p.time == 0 && p.enable == true && ene5[i].enable == true)
+		{
+			p.hp -= 1;
+			p.time = invincibletime;
+		}
+	}
 	for (int i = 0; i < playershotnum; i++)
 	{
 		for (int j = 0; j < enemynum1; j++)
@@ -94,6 +118,58 @@ void updateishit(void)
 				{
 					ene3[j].enable = false;
 					enemycount3 -= 1;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
+				}
+			}
+		}
+		for (int j = 0; j < enemynum4; j++)
+		{
+			if (ishit(pshot1[i], ene4[j]) &&
+				pshot1[i].enable == true && ene4[j].enable == true)
+			{
+				pshot1[i].enable = false;
+				ene4[j].hp -= pshot1[i].damage;
+				if (ene4[j].hp <= 0)
+				{
+					ene4[j].enable = false;
+					enemycount4 -= 1;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
+				}
+			}
+			if (ishit(pshot2[i], ene4[j]) &&
+				pshot2[i].enable == true && ene4[j].enable == true)
+			{
+				ene4[j].hp -= pshot2[i].damage;
+				if (ene4[j].hp <= 0)
+				{
+					ene4[j].enable = false;
+					enemycount4 -= 1;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
+				}
+			}
+		}
+		for (int j = 0; j < enemynum5; j++)
+		{
+			if (ishit(pshot1[i], ene5[j]) &&
+				pshot1[i].enable == true && ene5[j].enable == true)
+			{
+				pshot1[i].enable = false;
+				ene5[j].hp -= pshot1[i].damage;
+				if (ene5[j].hp <= 0)
+				{
+					ene5[j].enable = false;
+					enemycount5 -= 1;
+					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
+				}
+			}
+			if (ishit(pshot2[i], ene5[j]) &&
+				pshot2[i].enable == true && ene5[j].enable == true)
+			{
+				ene5[j].hp -= pshot2[i].damage;
+				if (ene5[j].hp <= 0)
+				{
+					ene5[j].enable = false;
+					enemycount5 -= 1;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
