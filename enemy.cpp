@@ -25,8 +25,8 @@ void initenemy(void)
 	for (int i = 0; i < enemynum1; i++)
 	{
 		ene1[i].hp = enemy1hp;
-		ene1[i].x = 850 + 50 * i;
-		ene1[i].y = 200;
+		ene1[i].x = 900 + 100 * i;
+		ene1[i].y = 300;
 		ene1[i].r = 20;
 		ene1[i].c = GetColor(255, 0, 0);
 		ene1[i].fill = true;
@@ -36,8 +36,8 @@ void initenemy(void)
 	for (int i = 0; i < enemynum2; i++)
 	{
 		ene2[i].hp = enemy2hp;
-		ene2[i].x = 850 + 50 * i;
-		ene2[i].y = 400;
+		ene2[i].x = 900 + 100 * i;
+		ene2[i].y = 300;
 		ene2[i].r = 25;
 		ene2[i].c = GetColor(255, 0, 0);
 		ene2[i].fill = true;
@@ -47,8 +47,8 @@ void initenemy(void)
 	for (int i = 0; i < enemynum3; i++)
 	{
 		ene3[i].hp = enemy3hp;
-		ene3[i].x = 850 + 50 * i;
-		ene3[i].y = 400;
+		ene3[i].x = 900 + 100 * i;
+		ene3[i].y = 300;
 		ene3[i].r = 25;
 		ene3[i].c = GetColor(255, 0, 0);
 		ene3[i].fill = true;

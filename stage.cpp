@@ -190,9 +190,10 @@ void initchangestage(void)
 	cscount = 0;
 	for (int i = 0; i < changenum; i++)
 	{
-		cs[i].x = GetRand(1600) + 850;
+		cs[i].x = GetRand(1600) + 900;
+		cs[i].vx = cs[i].x / (GetRand(100) + 150);
 		cs[i].y = GetRand(800) - 100;
-		cs[i].r = GetRand(70) + 10;
+		cs[i].r = GetRand(90) + 10;
 		cs[i].c = GetColor(25, 25, GetRand(200) + 55);
 		cs[i].fill = false;
 		cs[i].enable = true;
@@ -201,45 +202,26 @@ void initchangestage(void)
 }
 void updatechangestage(void)
 {
-		if (STtype == ST1 && enemycount1==0)
-		{
-			initchangestage();
-			STtype = ST2;
-		}
-		else if (STtype == ST2 && enemycount2==0)
-		{
-			initchangestage();
-			STtype = ST3;
-		}
-		else if (STtype == ST3 && enemycount3==0)
-		{
-			initchangestage();
-			STtype = ST4;
-		}
+	if (STtype == ST1 && enemycount1 == 0)
+	{
+		initchangestage();
+		STtype = ST2;
+	}
+	else if (STtype == ST2 && enemycount2 == 0)
+	{
+		initchangestage();
+		STtype = ST3;
+	}
+	else if (STtype == ST3 && enemycount3 == 0)
+	{
+		initchangestage();
+		STtype = ST4;
+	}
 	if (change == true)
 	{
 		for (int i = 0; i < changenum; i++)
 		{
-			if (cs[i].x > -50)
-			{
-				cs[i].x -= 6;
-				if (cs[i].x < 750)
-				{
-					cs[i].x += 0.5;
-				}
-				if (cs[i].x < 700)
-				{
-					cs[i].x += 0.5;
-				}
-				if (cs[i].x < 650)
-				{
-					cs[i].x += 0.5;
-				}
-				if (cs[i].x < 400)
-				{
-					cs[i].x += 0.5;
-				}
-			}
+			cs[i].x -= cs[i].vx;
 			if (cs[i].x <= -50 && cs[i].enable == true)
 			{
 				cs[i].enable = false;
@@ -252,11 +234,11 @@ void drawchangestage(void)
 {
 	if (change == true)
 	{
-		for (int i = 0; i < changenum; i++)
+		for (int i = 0; i < 150; i++)
 		{
 			if (cs[i].enable == true)
 			{
-				SetDrawBlendMode(DX_BLENDMODE_ADD, 125);
+				SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
 
 				DrawExtendGraph(cs[i].x - cs[i].r, cs[i].y - cs[i].r, cs[i].x + cs[i].r, cs[i].y + cs[i].r, stagechangeimg, true);
 				SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
