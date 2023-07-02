@@ -65,6 +65,19 @@ void updateishit(void)
 			PlaySoundMem(playerhitse, DX_PLAYTYPE_BACK);
 		}
 	}
+	for (int i = 0; i < enemyshotnum; i++)
+	{
+		if (ishit(p, ene1shot[i]) && p.time == 0 && p.enable == true && ene1shot[i].enable == true ||
+			ishit(p, ene2shot[i]) && p.time == 0 && p.enable == true && ene2shot[i].enable == true ||
+			ishit(p, ene3shot[i]) && p.time == 0 && p.enable == true && ene3shot[i].enable == true ||
+			ishit(p, ene4shot[i]) && p.time == 0 && p.enable == true && ene4shot[i].enable == true ||
+			ishit(p, ene5shot[i]) && p.time == 0 && p.enable == true && ene5shot[i].enable == true)
+		{
+			p.hp -= 1;
+			p.time = invincibletime;
+			PlaySoundMem(playerhitse, DX_PLAYTYPE_BACK);
+		}
+	}
 	if (ishit(p, boss) && p.time == 0 && p.enable == true && boss.enable == true)
 	{
 		p.hp -= 1;
@@ -232,7 +245,7 @@ void updateishit(void)
 		if (ishit(pshot2[i], boss) && pshot2[i].enable == true && boss.enable == true)
 		{
 			boss.hp -= pshot2[i].damage;
-			if(CheckSoundMem(bosshitse)==0)
+			if (CheckSoundMem(bosshitse) == 0)
 			{
 				PlaySoundMem(bosshitse, DX_PLAYTYPE_BACK);
 			}

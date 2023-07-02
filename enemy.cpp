@@ -107,7 +107,7 @@ void updateenemy(void)
 		{
 			ene1[i].time--;
 		}
-		if (canenemyshot(ene1[i]))
+		if (canenemyshot(ene1[i]) && ene1[i].enable == true)
 		{
 			aimshot1(ene1[i]);
 			straightshot1(170, ene1[i], 0, 0);
@@ -121,7 +121,7 @@ void updateenemy(void)
 		{
 			ene2[i].time--;
 		}
-		if (canenemyshot(ene2[i]))
+		if (canenemyshot(ene2[i]) && ene2[i].enable == true)
 		{
 			aimshot2(ene2[i]);
 			straightshot2(175, ene2[i], 0, 0);
@@ -136,7 +136,7 @@ void updateenemy(void)
 		{
 			ene3[i].time--;
 		}
-		if (canenemyshot(ene3[i]))
+		if (canenemyshot(ene3[i]) && ene3[i].enable == true)
 		{
 			aimshot3(ene3[i]);
 			straightshot3(165, ene3[i], 0, 0);
@@ -152,7 +152,7 @@ void updateenemy(void)
 		{
 			ene4[i].time--;
 		}
-		if (canenemyshot(ene4[i]))
+		if (canenemyshot(ene4[i]) && ene4[i].enable == true)
 		{
 			aimshot4(ene4[i]);
 			straightshot4(90, ene4[i], 0, 0);
@@ -169,7 +169,7 @@ void updateenemy(void)
 		{
 			ene5[i].time--;
 		}
-		if (canenemyshot(ene5[i]))
+		if (canenemyshot(ene5[i]) && ene5[i].enable == true)
 		{
 			aimshot5(ene5[i]);
 			straightshot5(180, ene5[i], 0, 0);
