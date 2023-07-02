@@ -58,7 +58,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			update();
 			if (gameclearflag == true)
 			{
-				DrawString(400, 300, "a", GetColor(255, 255, 255));
 				DrawExtendGraph(0, 200, 800, 400, gameclearlogo, true);
 			}
 			if (gameclearflag == false && gameoverflag == true)
