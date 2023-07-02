@@ -3,6 +3,7 @@
 int white;
 bool gameclearflag;
 bool gameoverflag;
+int score;
 
 int playerhpimg;
 
@@ -127,4 +128,5 @@ void drawgame(void)
 		DrawExtendGraph(p.x - 25 * (pshot1[0].time / pshotcooltime + 1), p.y - 45 * (pshot1[0].time / pshotcooltime + 1), p.x + 35 * (pshot1[0].time / pshotcooltime + 1), p.y + 45 * (pshot1[0].time / pshotcooltime + 1), playerimg, true);
 	}
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	DrawFormatString(650, 50, white, "score:%d", score);
 }

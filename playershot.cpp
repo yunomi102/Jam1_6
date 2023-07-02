@@ -45,9 +45,10 @@ void updateplayershot(void)
 		{
 			pshot1[i].x = pshot1[i].x + pshot1[i].vx;
 			pshot1[i].y = pshot1[i].y - pshot1[i].vy;
-			if (pshot1[i].x >= 800 ||
-				pshot1[i].y <= 0 ||
-				pshot1[i].y >= 600)
+			if (pshot1[i].x > 800 ||
+				pshot1[i].x < 0 ||
+				pshot1[i].y < 0 ||
+				pshot1[i].y > 600)
 			{
 				pshot1[i].enable = false;
 			}
@@ -57,6 +58,7 @@ void updateplayershot(void)
 			pshot2[i].x = pshot2[i].x + pshot2[i].vx;
 			pshot2[i].y = pshot2[i].y - pshot2[i].vy;
 			if (pshot2[i].x >= 800 ||
+				pshot2[i].x < 0 ||
 				pshot2[i].y <= 0 ||
 				pshot2[i].y >= 600)
 			{
@@ -71,9 +73,11 @@ void updateplayershot(void)
 			if (pshot2[i].enable == false && p.enable == true)
 			{
 				PlaySoundMem(shot2se, DX_PLAYTYPE_BACK);
-				shot2(350);
+				shot2(320);
+				shot2(345);
 				shot2(0);
-				shot2(10);
+				shot2(15);
+				shot2(40);
 				pshot1[0].time = pshotcooltime;
 				break;
 			}
@@ -86,9 +90,14 @@ void updateplayershot(void)
 			if (pshot1[i].enable == false && p.enable == true)
 			{
 				PlaySoundMem(shot1se, DX_PLAYTYPE_BACK);
-				shot1(345);
+				shot1(270);
+				shot1(340);
+				shot1(350);
 				shot1(0);
-				shot1(15);
+				shot1(10);
+				shot1(20);
+				shot1(90);
+				shot1(180);
 				pshot1[0].time = pshotcooltime;
 				break;
 			}

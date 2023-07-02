@@ -112,7 +112,7 @@ void updateenemy(void)
 			aimshot1(ene1[i]);
 			straightshot1(170, ene1[i], 0, 0);
 			straightshot1(190, ene1[i], 0, 0);
-			ene1[i].time = 100;
+			ene1[i].time = 250;
 		}
 	}
 	for (int i = 0; i < enemynum2; i++)
@@ -127,7 +127,7 @@ void updateenemy(void)
 			straightshot2(175, ene2[i], 0, 0);
 			straightshot2(180, ene2[i], 0, 0);
 			straightshot2(185, ene2[i], 0, 0);
-			ene2[i].time = 100;
+			ene2[i].time = 250;
 		}
 	}
 	for (int i = 0; i < enemynum3; i++)
@@ -143,7 +143,7 @@ void updateenemy(void)
 			straightshot3(175, ene3[i], 0, 0);
 			straightshot3(185, ene3[i], 0, 0);
 			straightshot3(195, ene3[i], 0, 0);
-			ene3[i].time = 100;
+			ene3[i].time = 250;
 		}
 	}
 	for (int i = 0; i < enemynum4; i++)
@@ -160,7 +160,7 @@ void updateenemy(void)
 			straightshot4(180, ene4[i], 0, 0);
 			straightshot4(225, ene4[i], 0, 0);
 			straightshot4(270, ene4[i], 0, 0);
-			ene4[i].time = 100;
+			ene4[i].time = 250;
 		}
 	}
 	for (int i = 0; i < enemynum5; i++)
@@ -171,10 +171,31 @@ void updateenemy(void)
 		}
 		if (canenemyshot(ene5[i]) && ene5[i].enable == true)
 		{
-			aimshot5(ene5[i]);
-			straightshot5(180, ene5[i], 0, 0);
-			ene5[i].time = 100;
+			straightshot5(170, ene5[i], 0, 0);
+			straightshot5(190, ene5[i], -2, 0);
+			straightshot5(175, ene5[i], -4, 0);
+			straightshot5(185, ene5[i], -6, 0);
+			straightshot5(180, ene5[i], -8, 0);
+			straightshot5(165, ene5[i], -10, 0);
+			ene5[i].time = 250;
 		}
+	}
+	if (boss.time > 0)
+	{
+		boss.time--;
+	}
+	if (canenemyshot(boss) && boss.enable == true)
+	{
+		aimshotboss(boss);
+		straightshotboss(0, boss, 0, 0);
+		straightshotboss(45, boss, 0, 0);
+		straightshotboss(90, boss, 0, 0);
+		straightshotboss(135, boss, 0, 0);
+		straightshotboss(180, boss, 0, 0);
+		straightshotboss(225, boss, 0, 0);
+		straightshotboss(270, boss, 0, 0);
+		straightshotboss(315, boss, 0, 0);
+		boss.time = 150;
 	}
 	if (p.enable == true)
 	{
@@ -182,8 +203,8 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum1; i++)
 			{
-				ene1[i].x -= 2;
-				if (ene1[i].x < 10 && ene1[i].enable == true)
+				ene1[i].x -= 1;
+				if (ene1[i].x < -50 && ene1[i].enable == true)
 				{
 					ene1[i].enable = false;
 					enemycount1 -= 1;
@@ -194,8 +215,8 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum2; i++)
 			{
-				ene2[i].x -= 2;
-				if (ene2[i].x < 10 && ene2[i].enable == true)
+				ene2[i].x -=0.9;
+				if (ene2[i].x < -50 && ene2[i].enable == true)
 				{
 					ene2[i].enable = false;
 					enemycount2 -= 1;
@@ -206,8 +227,8 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum3; i++)
 			{
-				ene3[i].x -= 2;
-				if (ene3[i].x < 10 && ene3[i].enable == true)
+				ene3[i].x -= 1.2;
+				if (ene3[i].x < -50 && ene3[i].enable == true)
 				{
 					ene3[i].enable = false;
 					enemycount3 -= 1;
@@ -218,8 +239,8 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum4; i++)
 			{
-				ene4[i].x -= 2;
-				if (ene4[i].x < 10 && ene4[i].enable == true)
+				ene4[i].x -= 0.75;
+				if (ene4[i].x < -50 && ene4[i].enable == true)
 				{
 					ene4[i].enable = false;
 					enemycount4 -= 1;
@@ -230,8 +251,8 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum5; i++)
 			{
-				ene5[i].x -= 2;
-				if (ene5[i].x < 10 && ene5[i].enable == true)
+				ene5[i].x -= 3;
+				if (ene5[i].x < -50 && ene5[i].enable == true)
 				{
 					ene5[i].enable = false;
 					enemycount5 -= 1;

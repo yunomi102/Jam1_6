@@ -202,8 +202,6 @@ void drawstage(void)
 	else if (STtype == ST5)
 	{
 		DrawExtendGraph(stage5.x, stage5.y, stage5.x + 800, stage5.y + 600, stage5.stageimg, true);
-		//DrawExtendGraph(stage5[0].x, stage5[0].y, stage5[0].x + 800, stage5[0].y + 600, stage5[0].stageimg, true);
-		//DrawExtendGraph(stage5[1].x, stage5[1].y, stage5[1].x + 800, stage5[1].y + 600, stage5[1].stageimg, true);
 		if (cscount != 255)
 		{
 			stage4[0].x -= 1;

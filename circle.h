@@ -7,6 +7,8 @@ struct circle
 	double y;
 	double vx;
 	double vy;
+	double vvx;
+	double vvy;
 	double r;
 	int c;
 	bool fill;

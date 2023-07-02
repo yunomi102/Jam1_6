@@ -97,6 +97,7 @@ void updateishit(void)
 				{
 					ene1[j].enable = false;
 					enemycount1 -= 1;
+					score += 10;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -111,6 +112,7 @@ void updateishit(void)
 				{
 					ene1[j].enable = false;
 					enemycount1 -= 1;
+					score += 10;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -126,6 +128,7 @@ void updateishit(void)
 				{
 					ene2[j].enable = false;
 					enemycount2 -= 1;
+					score += 20;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -140,6 +143,7 @@ void updateishit(void)
 				{
 					ene2[j].enable = false;
 					enemycount2 -= 1;
+					score += 20;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -155,6 +159,7 @@ void updateishit(void)
 				{
 					ene3[j].enable = false;
 					enemycount3 -= 1;
+					score += 30;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -169,6 +174,7 @@ void updateishit(void)
 				{
 					ene3[j].enable = false;
 					enemycount3 -= 1;
+					score += 30;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -184,6 +190,7 @@ void updateishit(void)
 				{
 					ene4[j].enable = false;
 					enemycount4 -= 1;
+					score += 40;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -198,6 +205,7 @@ void updateishit(void)
 				{
 					ene4[j].enable = false;
 					enemycount4 -= 1;
+					score += 40;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -213,6 +221,7 @@ void updateishit(void)
 				{
 					ene5[j].enable = false;
 					enemycount5 -= 1;
+					score += 50;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -227,6 +236,7 @@ void updateishit(void)
 				{
 					ene5[j].enable = false;
 					enemycount5 -= 1;
+					score += 50;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
@@ -238,6 +248,7 @@ void updateishit(void)
 			PlaySoundMem(bosshitse, DX_PLAYTYPE_BACK);
 			if (boss.hp <= 0)
 			{
+				score += 100;
 				boss.enable = false;
 				PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 			}
@@ -251,6 +262,7 @@ void updateishit(void)
 			}
 			if (boss.hp <= 0)
 			{
+				score += 100;
 				boss.enable = false;
 				PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 			}

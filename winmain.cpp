@@ -65,6 +65,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			if (gameclearflag == true)
 			{
 				DrawExtendGraph(0, 200, 800, 400, gameclearlogo, true);
+				DrawFormatString(250, 450, GetColor(255, 255, 255), "SCORE:%d", score);
 				if (gameclearbgm == false)
 				{
 					PlayMusic("gameclearbgm.mp3", DX_PLAYTYPE_LOOP);
@@ -74,6 +75,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			if (gameclearflag == false && gameoverflag == true)
 			{
 				DrawExtendGraph(0, 200, 800, 400, gameoverlogo, true);
+				DrawString(550, 500, "RESTART TO PUSH ENTER KEY", GetColor(255, 255, 255));
+				SetFontSize(35);
+				DrawFormatString(250,450,GetColor(255,255,255),"SCORE:%d",score);
+				SetFontSize(16);
 				if (gameoverbgm == false)
 				{
 					PlayMusic("gameoverbgm.mp3", DX_PLAYTYPE_LOOP);
@@ -128,7 +133,7 @@ void update(void)
 	updategame();
 	updatechangestage();
 	updateishit();
-	
+
 	draw();
 }
 void draw(void)
@@ -150,6 +155,7 @@ void titleupdate(void)
 		scene = tutorial;
 	}
 	DrawExtendGraph(0, 250, 800, 350, titlelogo, true);
+	DrawString(650, 500, "PUSH ENTER KEY", GetColor(255, 255, 255));
 	if (CheckHitKey(KEY_INPUT_RETURN) == 0)
 	{
 		pushenter = false;
@@ -176,4 +182,10 @@ void tutorialupdate(void)
 		pushenter = false;
 	}
 	DrawExtendGraph(100, 100, 700, 250, tutoriallogo, true);
+	SetFontSize(50);
+	DrawString(250, 300, "移動:WASD", GetColor(255, 255, 255));
+	DrawString(250, 375, "ショット:SPACE", GetColor(255, 255, 255));
+	DrawString(250, 450, "加速:LSHIFT", GetColor(255, 255, 255));
+	SetFontSize(16);
+	DrawString(650, 500, "PUSH ENTER KEY", GetColor(255, 255, 255));
 }
