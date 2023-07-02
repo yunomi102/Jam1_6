@@ -33,6 +33,7 @@ void initenemy(void)
 		ene1[i].c = GetColor(255, 0, 0);
 		ene1[i].fill = true;
 		ene1[i].enable = true;
+		ene1[i].time = 100;
 	}
 	enemy1img = LoadGraph("enemy01.png");
 	for (int i = 0; i < enemynum2; i++)
@@ -44,6 +45,7 @@ void initenemy(void)
 		ene2[i].c = GetColor(255, 0, 0);
 		ene2[i].fill = true;
 		ene2[i].enable = true;
+		ene2[i].time = 100;
 	}
 	enemy2img = LoadGraph("enemy02.png");
 	for (int i = 0; i < enemynum3; i++)
@@ -55,6 +57,7 @@ void initenemy(void)
 		ene3[i].c = GetColor(255, 0, 0);
 		ene3[i].fill = true;
 		ene3[i].enable = true;
+		ene3[i].time = 100;
 	}
 	enemy3img = LoadGraph("enemy03.png");
 	for (int i = 0; i < enemynum4; i++)
@@ -66,6 +69,7 @@ void initenemy(void)
 		ene4[i].c = GetColor(255, 0, 0);
 		ene4[i].fill = true;
 		ene4[i].enable = true;
+		ene4[i].time = 100;
 	}
 	enemy4img = LoadGraph("enemy04.png");
 	for (int i = 0; i < enemynum5; i++)
@@ -77,6 +81,7 @@ void initenemy(void)
 		ene5[i].c = GetColor(255, 0, 0);
 		ene5[i].fill = true;
 		ene5[i].enable = true;
+		ene5[i].time = 100;
 	}
 	enemy5img = LoadGraph("enemy05.png");
 	boss.hp = bosshp;
@@ -96,71 +101,74 @@ void initenemy(void)
 }
 void updateenemy(void)
 {
-	if (STtype == ST1)
+	if(p.enable==true)
 	{
-		for (int i = 0; i < enemynum1; i++)
+		if (STtype == ST1)
 		{
-			ene1[i].x -= 2;
-			if (ene1[i].x < 10 && ene1[i].enable == true)
+			for (int i = 0; i < enemynum1; i++)
 			{
-				ene1[i].enable = false;
-				enemycount1 -= 1;
+				ene1[i].x -= 2;
+				if (ene1[i].x < 10 && ene1[i].enable == true)
+				{
+					ene1[i].enable = false;
+					enemycount1 -= 1;
+				}
 			}
 		}
-	}
-	else if (STtype == ST2)
-	{
-		for (int i = 0; i < enemynum2; i++)
+		else if (STtype == ST2)
 		{
-			ene2[i].x -= 2;
-			if (ene2[i].x < 10 && ene2[i].enable == true)
+			for (int i = 0; i < enemynum2; i++)
 			{
-				ene2[i].enable = false;
-				enemycount2 -= 1;
+				ene2[i].x -= 2;
+				if (ene2[i].x < 10 && ene2[i].enable == true)
+				{
+					ene2[i].enable = false;
+					enemycount2 -= 1;
+				}
 			}
 		}
-	}
-	else if (STtype == ST3)
-	{
-		for (int i = 0; i < enemynum3; i++)
+		else if (STtype == ST3)
 		{
-			ene3[i].x -= 2;
-			if (ene3[i].x < 10 && ene3[i].enable == true)
+			for (int i = 0; i < enemynum3; i++)
 			{
-				ene3[i].enable = false;
-				enemycount3 -= 1;
+				ene3[i].x -= 2;
+				if (ene3[i].x < 10 && ene3[i].enable == true)
+				{
+					ene3[i].enable = false;
+					enemycount3 -= 1;
+				}
 			}
 		}
-	}
-	else if (STtype == ST4)
-	{
-		for (int i = 0; i < enemynum4; i++)
+		else if (STtype == ST4)
 		{
-			ene4[i].x -= 2;
-			if (ene4[i].x < 10 && ene4[i].enable == true)
+			for (int i = 0; i < enemynum4; i++)
 			{
-				ene4[i].enable = false;
-				enemycount4 -= 1;
+				ene4[i].x -= 2;
+				if (ene4[i].x < 10 && ene4[i].enable == true)
+				{
+					ene4[i].enable = false;
+					enemycount4 -= 1;
+				}
 			}
 		}
-	}
-	else if (STtype == ST5)
-	{
-		for (int i = 0; i < enemynum5; i++)
+		else if (STtype == ST5)
 		{
-			ene5[i].x -= 2;
-			if (ene5[i].x < 10 && ene5[i].enable == true)
+			for (int i = 0; i < enemynum5; i++)
 			{
-				ene5[i].enable = false;
-				enemycount5 -= 1;
+				ene5[i].x -= 2;
+				if (ene5[i].x < 10 && ene5[i].enable == true)
+				{
+					ene5[i].enable = false;
+					enemycount5 -= 1;
+				}
 			}
 		}
-	}
-	else if (STtype == STB)
-	{
-		if(boss.x>=400)
+		else if (STtype == STB)
 		{
-			boss.x -= 2;
+			if (boss.x >= 400)
+			{
+				boss.x -= 2;
+			}
 		}
 	}
 }

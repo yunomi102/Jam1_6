@@ -6,7 +6,8 @@ circle pshot2[playershotnum];
 int playershotimg1;
 int playershotimg2;
 
-int shotse;
+int shot1se;
+int shot2se;
 
 void initplayershot(void)
 {
@@ -20,6 +21,7 @@ void initplayershot(void)
 		pshot1[i].enable = false;
 	}
 	playershotimg1 = LoadGraph("shot01.png");
+	shot1se = LoadSoundMem("shot1se.mp3");
 	for (int i = 0; i < playershotnum; i++)
 	{
 		pshot2[i].damage = playershotdamage2;
@@ -29,7 +31,7 @@ void initplayershot(void)
 		pshot2[i].enable = false;
 	}
 	playershotimg2 = LoadGraph("shot02.png");
-	shotse = LoadSoundMem("maou_se_8bit16.mp3");
+	shot2se = LoadSoundMem("shot2se.mp3");
 }
 void updateplayershot(void)
 {
@@ -68,7 +70,7 @@ void updateplayershot(void)
 		{
 			if (pshot2[i].enable == false && p.enable == true)
 			{
-				PlaySoundMem(shotse, DX_PLAYTYPE_BACK);
+				PlaySoundMem(shot2se, DX_PLAYTYPE_BACK);
 				shot2(350);
 				shot2(0);
 				shot2(10);
@@ -83,7 +85,7 @@ void updateplayershot(void)
 		{
 			if (pshot1[i].enable == false && p.enable == true)
 			{
-				PlaySoundMem(shotse, DX_PLAYTYPE_BACK);
+				PlaySoundMem(shot1se, DX_PLAYTYPE_BACK);
 				shot1(345);
 				shot1(0);
 				shot1(15);

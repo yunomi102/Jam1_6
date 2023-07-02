@@ -18,6 +18,9 @@ enum gamescene
 gamescene scene;
 bool pushenter;
 bool tutorialflag;
+bool gameclearbgm;
+bool gameoverbgm;
+int titleback;
 int titlelogo;
 int tutoriallogo;
 int gameclearlogo;
@@ -44,13 +47,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		if (scene == restart)
 		{
 			init();
+			tutorialflag = false;
 		}
 		if (scene == title)
 		{
+			DrawExtendGraph(0, 0, 800, 600, titleback, true);
 			titleupdate();
 		}
 		if (scene == tutorial)
 		{
+			DrawExtendGraph(0, 0, 800, 600, titleback, true);
 			tutorialupdate();
 		}
 		if (scene == game)
@@ -59,14 +65,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			if (gameclearflag == true)
 			{
 				DrawExtendGraph(0, 200, 800, 400, gameclearlogo, true);
+				if (gameclearbgm == false)
+				{
+					PlayMusic("gameclearbgm.mp3", DX_PLAYTYPE_LOOP);
+					gameclearbgm = true;
+				}
 			}
 			if (gameclearflag == false && gameoverflag == true)
 			{
 				DrawExtendGraph(0, 200, 800, 400, gameoverlogo, true);
+				if (gameoverbgm == false)
+				{
+					PlayMusic("gameoverbgm.mp3", DX_PLAYTYPE_LOOP);
+					gameoverbgm = true;
+				}
 				if (CheckHitKey(KEY_INPUT_RETURN) == 1 && pushenter == false)
 				{
-					tutorialflag = true;
+					pushenter = true;
 					scene = restart;
+				}
+				if (CheckHitKey(KEY_INPUT_RETURN) == 0)
+				{
+					pushenter = false;
 				}
 			}
 		}
@@ -85,7 +105,11 @@ void init(void)
 	initenemyshot();
 	initstage();
 	initgame();
+	initishit();
 	tutorialflag = true;
+	gameclearbgm = false;
+	gameoverbgm = false;
+	titleback = LoadGraph("titleback.png");
 	titlelogo = LoadGraph("titlelogo.png");
 	tutoriallogo = LoadGraph("tutoriallogo.png");
 	gameclearlogo = LoadGraph("gameclearlogo.png");
@@ -125,7 +149,7 @@ void titleupdate(void)
 		PlayMusic("tutorialbgm.mp3", DX_PLAYTYPE_LOOP);
 		scene = tutorial;
 	}
-	DrawExtendGraph(0, 200, 800, 400, titlelogo, true);
+	DrawExtendGraph(0, 250, 800, 350, titlelogo, true);
 	if (CheckHitKey(KEY_INPUT_RETURN) == 0)
 	{
 		pushenter = false;
@@ -144,13 +168,12 @@ void tutorialupdate(void)
 	}
 	else if (tutorialflag == false)
 	{
-		pushenter = false;
-		scene == game;
+		scene = game;
 		PlayMusic("gamebgm.mp3", DX_PLAYTYPE_LOOP);
 	}
 	if (CheckHitKey(KEY_INPUT_RETURN) == 0)
 	{
 		pushenter = false;
 	}
-	DrawExtendGraph(0, 200, 800, 400, tutoriallogo, true);
+	DrawExtendGraph(100, 100, 700, 250, tutoriallogo, true);
 }

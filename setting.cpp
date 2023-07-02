@@ -32,6 +32,7 @@ double bossx;
 double bossy;
 
 int hpuptime;
+
 void initsetting(void)
 {
 	collision = false;	   //“–‚½‚è”»’è

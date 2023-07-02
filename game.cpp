@@ -84,6 +84,33 @@ void drawgame(void)
 		{
 			DrawCircle(boss.x, boss.y, boss.r, boss.c, boss.fill);
 		}
+		for (int i = 0; i < enemyshotnum; i++) 
+		{
+			if (ene1shot[i].enable == true)
+			{
+				DrawCircle(ene1shot[i].x, ene1shot[i].y, ene1shot[i].r, ene1shot[i].c, ene1shot[i].fill);
+			}
+			if (ene2shot[i].enable == true)
+			{
+				DrawCircle(ene2shot[i].x, ene2shot[i].y, ene2shot[i].r, ene2shot[i].c, ene2shot[i].fill);
+			}
+			if (ene3shot[i].enable == true)
+			{
+				DrawCircle(ene3shot[i].x, ene3shot[i].y, ene3shot[i].r, ene3shot[i].c, ene3shot[i].fill);
+			}
+			if (ene4shot[i].enable == true)
+			{
+				DrawCircle(ene4shot[i].x, ene4shot[i].y, ene4shot[i].r, ene4shot[i].c, ene4shot[i].fill);
+			}
+			if (ene5shot[i].enable == true)
+			{
+				DrawCircle(ene5shot[i].x, ene5shot[i].y, ene5shot[i].r, ene5shot[i].c, ene5shot[i].fill);
+			}
+			if (bossshot[i].enable == true)
+			{
+				DrawCircle(bossshot[i].x, bossshot[i].y, bossshot[i].r, bossshot[i].c, bossshot[i].fill);
+			}
+		}
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	}
 	if (p.time > 0)
