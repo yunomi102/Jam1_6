@@ -128,15 +128,15 @@ void update(void)
 	updategame();
 	updatechangestage();
 	updateishit();
-
+	
 	draw();
 }
 void draw(void)
 {
 	drawstage();
 	drawplayershot();
-	drawplayer();
 	drawenemyshot();
+	drawplayer();
 	drawenemy();
 	drawgame();
 	drawchangestage();
