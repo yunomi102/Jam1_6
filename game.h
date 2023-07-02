@@ -1,6 +1,7 @@
 #pragma once
 #include"setting.h"
 
+extern bool gameclearflag;
 extern bool gameoverflag;
 
 void initgame(void);

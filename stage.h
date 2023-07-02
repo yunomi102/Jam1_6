@@ -14,7 +14,8 @@ enum stagetype
 	ST2,
 	ST3,
 	ST4,
-	ST5
+	ST5,
+	STB
 };
 
 extern stagetype STtype;
@@ -24,6 +25,7 @@ extern stage stage2[2];
 extern stage stage3[2];
 extern stage stage4[2];
 extern stage stage5;
+extern stage stageboss;
 const int changenum = 255;
 extern circle cs[changenum];
 

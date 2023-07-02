@@ -7,6 +7,7 @@ stage stage2[2];
 stage stage3[2];
 stage stage4[2];
 stage stage5;
+stage stageboss;
 
 circle cs[changenum];
 
@@ -44,8 +45,11 @@ void initstage(void)
 	stage5.stageimg = LoadGraph("stage05.png");
 	stage5.x = 0;
 	stage5.y = 0;
+	stageboss.stageimg = LoadGraph("stageboss.png");
+	stageboss.x = 0;
+	stageboss.y = 0;
 	change = false;
-	stagechangeimg = LoadGraph("Awa01.png");
+	stagechangeimg = LoadGraph("bubble.png");
 }
 void updatestage(void)
 {
@@ -102,6 +106,10 @@ void updatestage(void)
 		}
 	}
 	else if (STtype == ST5)
+	{
+
+	}
+	else if (STtype == STB)
 	{
 
 	}
@@ -194,7 +202,8 @@ void drawstage(void)
 	else if (STtype == ST5)
 	{
 		DrawExtendGraph(stage5.x, stage5.y, stage5.x + 800, stage5.y + 600, stage5.stageimg, true);
-		DrawExtendGraph(stage5.x, stage5.y, stage5.x + 800, stage5.y + 600, stage5.stageimg, true);
+		//DrawExtendGraph(stage5[0].x, stage5[0].y, stage5[0].x + 800, stage5[0].y + 600, stage5[0].stageimg, true);
+		//DrawExtendGraph(stage5[1].x, stage5[1].y, stage5[1].x + 800, stage5[1].y + 600, stage5[1].stageimg, true);
 		if (cscount != 255)
 		{
 			stage4[0].x -= 1;
@@ -215,6 +224,17 @@ void drawstage(void)
 		else if (cscount == 255)
 		{
 			change = false;
+		}
+	}
+	else if (STtype == STB)
+	{
+		DrawExtendGraph(stageboss.x, stageboss.y, stageboss.x + 800, stageboss.y + 600, stageboss.stageimg, true);
+		if (cscount != 255)
+		{
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255 - cscount);
+			DrawExtendGraph(stage5.x, stage5.y, stage5.x + 800, stage5.y + 600, stage5.stageimg, true);
+			DrawExtendGraph(stage5.x, stage5.y, stage5.x + 800, stage5.y + 600, stage5.stageimg, true);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 	}
 }
@@ -254,6 +274,11 @@ void updatechangestage(void)
 	{
 		initchangestage();
 		STtype = ST5;
+	}
+	else if (STtype == ST5 && enemycount5 == 0)
+	{
+		initchangestage();
+		STtype = STB;
 	}
 	if (change == true)
 	{

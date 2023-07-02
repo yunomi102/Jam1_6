@@ -33,6 +33,9 @@
     <ClCompile Include="stage.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="enemyshot.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h">
@@ -57,6 +60,9 @@
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="stage.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyshot.h">
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
   </ItemGroup>

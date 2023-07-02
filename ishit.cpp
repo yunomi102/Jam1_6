@@ -42,12 +42,16 @@ void updateishit(void)
 			p.time = invincibletime;
 		}
 	}
+	if (ishit(p, boss) && p.time == 0 && p.enable == true && boss.enable == true)
+	{
+		p.hp -= 1;
+		p.time = invincibletime;
+	}
 	for (int i = 0; i < playershotnum; i++)
 	{
 		for (int j = 0; j < enemynum1; j++)
 		{
-			if (ishit(pshot1[i], ene1[j]) &&
-				pshot1[i].enable == true && ene1[j].enable == true)
+			if (ishit(pshot1[i], ene1[j]) && pshot1[i].enable == true && ene1[j].enable == true)
 			{
 				pshot1[i].enable = false;
 				ene1[j].hp -= pshot1[i].damage;
@@ -58,8 +62,7 @@ void updateishit(void)
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
-			if (ishit(pshot2[i], ene1[j]) &&
-				pshot2[i].enable == true && ene1[j].enable == true)
+			if (ishit(pshot2[i], ene1[j]) && pshot2[i].enable == true && ene1[j].enable == true)
 			{
 				ene1[j].hp -= pshot2[i].damage;
 				if (ene1[j].hp <= 0)
@@ -72,8 +75,7 @@ void updateishit(void)
 		}
 		for (int j = 0; j < enemynum2; j++)
 		{
-			if (ishit(pshot1[i], ene2[j]) &&
-				pshot1[i].enable == true && ene2[j].enable == true)
+			if (ishit(pshot1[i], ene2[j]) && pshot1[i].enable == true && ene2[j].enable == true)
 			{
 				pshot1[i].enable = false;
 				ene2[j].hp -= pshot1[i].damage;
@@ -84,8 +86,7 @@ void updateishit(void)
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
-			if (ishit(pshot2[i], ene2[j]) &&
-				pshot2[i].enable == true && ene2[j].enable == true)
+			if (ishit(pshot2[i], ene2[j]) && pshot2[i].enable == true && ene2[j].enable == true)
 			{
 				ene2[j].hp -= pshot2[i].damage;
 				if (ene2[j].hp <= 0)
@@ -98,8 +99,7 @@ void updateishit(void)
 		}
 		for (int j = 0; j < enemynum3; j++)
 		{
-			if (ishit(pshot1[i], ene3[j]) &&
-				pshot1[i].enable == true && ene3[j].enable == true)
+			if (ishit(pshot1[i], ene3[j]) && pshot1[i].enable == true && ene3[j].enable == true)
 			{
 				pshot1[i].enable = false;
 				ene3[j].hp -= pshot1[i].damage;
@@ -110,8 +110,7 @@ void updateishit(void)
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
-			if (ishit(pshot2[i], ene3[j]) &&
-				pshot2[i].enable == true && ene3[j].enable == true)
+			if (ishit(pshot2[i], ene3[j]) && pshot2[i].enable == true && ene3[j].enable == true)
 			{
 				ene3[j].hp -= pshot2[i].damage;
 				if (ene3[j].hp <= 0)
@@ -124,8 +123,7 @@ void updateishit(void)
 		}
 		for (int j = 0; j < enemynum4; j++)
 		{
-			if (ishit(pshot1[i], ene4[j]) &&
-				pshot1[i].enable == true && ene4[j].enable == true)
+			if (ishit(pshot1[i], ene4[j]) && pshot1[i].enable == true && ene4[j].enable == true)
 			{
 				pshot1[i].enable = false;
 				ene4[j].hp -= pshot1[i].damage;
@@ -136,8 +134,7 @@ void updateishit(void)
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
-			if (ishit(pshot2[i], ene4[j]) &&
-				pshot2[i].enable == true && ene4[j].enable == true)
+			if (ishit(pshot2[i], ene4[j]) && pshot2[i].enable == true && ene4[j].enable == true)
 			{
 				ene4[j].hp -= pshot2[i].damage;
 				if (ene4[j].hp <= 0)
@@ -150,8 +147,7 @@ void updateishit(void)
 		}
 		for (int j = 0; j < enemynum5; j++)
 		{
-			if (ishit(pshot1[i], ene5[j]) &&
-				pshot1[i].enable == true && ene5[j].enable == true)
+			if (ishit(pshot1[i], ene5[j]) && pshot1[i].enable == true && ene5[j].enable == true)
 			{
 				pshot1[i].enable = false;
 				ene5[j].hp -= pshot1[i].damage;
@@ -162,8 +158,7 @@ void updateishit(void)
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
 			}
-			if (ishit(pshot2[i], ene5[j]) &&
-				pshot2[i].enable == true && ene5[j].enable == true)
+			if (ishit(pshot2[i], ene5[j]) && pshot2[i].enable == true && ene5[j].enable == true)
 			{
 				ene5[j].hp -= pshot2[i].damage;
 				if (ene5[j].hp <= 0)
@@ -172,6 +167,25 @@ void updateishit(void)
 					enemycount5 -= 1;
 					PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 				}
+			}
+		}
+		if (ishit(pshot1[i], boss) && pshot1[i].enable == true && boss.enable == true)
+		{
+			pshot1[i].enable = false;
+			boss.hp -= pshot1[i].damage;
+			if (boss.hp <= 0)
+			{
+				boss.enable = false;
+				PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
+			}
+		}
+		if (ishit(pshot2[i], boss) && pshot2[i].enable == true && boss.enable == true)
+		{
+			boss.hp -= pshot2[i].damage;
+			if (boss.hp <= 0)
+			{
+				boss.enable = false;
+				PlaySoundMem(enemydownse, DX_PLAYTYPE_BACK);
 			}
 		}
 	}

@@ -7,7 +7,7 @@ struct circle
 	double y;
 	double vx;
 	double vy;
-	int r;
+	double r;
 	int c;
 	bool fill;
 	bool enable;

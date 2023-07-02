@@ -11,6 +11,7 @@ extern circle ene2[enemynum2];
 extern circle ene3[enemynum3];
 extern circle ene4[enemynum4];
 extern circle ene5[enemynum5];
+extern circle boss;
 
 extern int enemycount1;
 extern int enemycount2;

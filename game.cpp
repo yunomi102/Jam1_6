@@ -1,6 +1,7 @@
 #include"game.h"
 
 int white;
+bool gameclearflag;
 bool gameoverflag;
 
 int playerhpimg;
@@ -8,11 +9,16 @@ int playerhpimg;
 void initgame(void)
 {
 	white = GetColor(255, 255, 255);
-	gameoverflag = false;
+	gameclearflag = false;
+	gameoverflag = true;
 	playerhpimg = LoadGraph("playerhp.png");
 }
 void updategame(void)
 {
+	if (boss.enable == false)
+	{
+		gameclearflag = true;
+	}
 	if (p.hp == 0)
 	{
 		p.enable = false;
@@ -23,6 +29,7 @@ void drawgame(void)
 {
 	if (collision == true)
 	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
 		if (p.enable == true)
 		{
 			DrawCircle(p.x, p.y, p.r, p.c, p.fill);
@@ -73,6 +80,11 @@ void drawgame(void)
 				DrawCircle(ene5[i].x, ene5[i].y, ene5[i].r, ene5[i].c, ene5[i].fill);
 			}
 		}
+		if (boss.enable == true)
+		{
+			DrawCircle(boss.x, boss.y, boss.r, boss.c, boss.fill);
+		}
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	}
 	if (p.time > 0)
 	{
