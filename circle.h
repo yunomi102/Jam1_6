@@ -13,7 +13,7 @@ struct circle
 	int c;
 	bool fill;
 	bool enable;
-	int hp;
-	int damage;
+	double hp;
+	double damage;
 	double time;
 };

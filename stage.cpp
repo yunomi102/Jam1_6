@@ -257,27 +257,27 @@ void initchangestage(void)
 }
 void updatechangestage(void)
 {
-	if (STtype == ST1 && enemycount1 == 10)
+	if (STtype == ST1 && enemycount1 == 0)
 	{
 		initchangestage();
 		STtype = ST2;
 	}
-	else if (STtype == ST2 && enemycount2 == 10)
+	else if (STtype == ST2 && enemycount2 == 0)
 	{
 		initchangestage();
 		STtype = ST3;
 	}
-	else if (STtype == ST3 && enemycount3 == 10)
+	else if (STtype == ST3 && enemycount3 == 0)
 	{
 		initchangestage();
 		STtype = ST4;
 	}
-	else if (STtype == ST4 && enemycount4 == 10)
+	else if (STtype == ST4 && enemycount4 == 0)
 	{
 		initchangestage();
 		STtype = ST5;
 	}
-	else if (STtype == ST5 && enemycount5 == 10)
+	else if (STtype == ST5 && enemycount5 == 0)
 	{
 		initchangestage();
 		STtype = STB;

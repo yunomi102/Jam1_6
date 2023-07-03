@@ -28,7 +28,7 @@ void drawEffect()
 		if (effe[i].enable == true)
 		{
 			int no = effe[i].animeNo;
-			DrawGraph(effe[i].x, effe[i].y, img[no], true);
+			DrawExtendGraph(effe[i].x1, effe[i].y1, effe[i].x2, effe[i].y2,img[no], true);
 		}
 	}
 }

@@ -299,8 +299,10 @@ void explosion(circle ene)
 		if (effe[i].enable == false)
 		{
 			effe[i].enable = true;
-			effe[i].x = ene.x - 60;
-			effe[i].y = ene.y - 60;
+			effe[i].x1 = ene.x - (ene.r + ene.r);
+			effe[i].y1 = ene.y - (ene.r + ene.r);
+			effe[i].x2 = ene.x + (ene.r + ene.r);
+			effe[i].y2 = ene.y + (ene.r + ene.r);
 			effe[i].animeNo = 0;
 			break;
 		}
