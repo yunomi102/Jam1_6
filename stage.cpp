@@ -253,7 +253,7 @@ void initchangestage(void)
 }
 void updatechangestage(void)
 {
-	if (STtype == ST1 && enemycount1 == 0)
+	if (STtype == ST1 && enemycount1 == 10)
 	{
 		initchangestage();
 		STtype = ST2;

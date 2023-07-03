@@ -77,7 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				DrawExtendGraph(0, 200, 800, 400, gameoverlogo, true);
 				DrawString(550, 500, "RESTART TO PUSH ENTER KEY", GetColor(255, 255, 255));
 				SetFontSize(35);
-				DrawFormatString(250,450,GetColor(255,255,255),"SCORE:%d",score);
+				DrawFormatString(250, 450, GetColor(255, 255, 255), "SCORE:%d", score);
 				SetFontSize(16);
 				if (gameoverbgm == false)
 				{
@@ -182,6 +182,12 @@ void tutorialupdate(void)
 		pushenter = false;
 	}
 	DrawExtendGraph(100, 100, 700, 250, tutoriallogo, true);
+	SetFontSize(55);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
+	DrawString(235, 305, "移動:WASD", GetColor(0, 0, 0));
+	DrawString(235, 380, "ショット:SPACE", GetColor(0, 0, 0));
+	DrawString(235, 455, "加速:LSHIFT", GetColor(0, 0, 0));
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	SetFontSize(50);
 	DrawString(250, 300, "移動:WASD", GetColor(255, 255, 255));
 	DrawString(250, 375, "ショット:SPACE", GetColor(255, 255, 255));
