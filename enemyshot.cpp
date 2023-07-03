@@ -7,7 +7,12 @@ circle ene4shot[enemyshotnum];
 circle ene5shot[enemyshotnum];
 circle bossshot[enemyshotnum];
 
-int enemyshotimg;
+int enemyshotimg1;
+int enemyshotimg2;
+int enemyshotimg3;
+int enemyshotimg4;
+int enemyshotimg5;
+int bossshotimg;
 
 void initenemyshot(void)
 {
@@ -17,7 +22,7 @@ void initenemyshot(void)
 		ene1shot[i].c = GetColor(0, 0, 255);
 		ene1shot[i].fill = true;
 		ene1shot[i].enable = false;
-		ene2shot[i].r = 15;
+		ene2shot[i].r = 20;
 		ene2shot[i].c = GetColor(0, 0, 255);
 		ene2shot[i].fill = true;
 		ene2shot[i].enable = false;
@@ -29,7 +34,7 @@ void initenemyshot(void)
 		ene4shot[i].c = GetColor(0, 0, 255);
 		ene4shot[i].fill = true;
 		ene4shot[i].enable = false;
-		ene5shot[i].r = 5;
+		ene5shot[i].r = 10;
 		ene5shot[i].c = GetColor(0, 0, 255);
 		ene5shot[i].fill = true;
 		ene5shot[i].enable = false;
@@ -38,7 +43,12 @@ void initenemyshot(void)
 		bossshot[i].fill = true;
 		bossshot[i].enable = false;
 	}
-	enemyshotimg = LoadGraph("enemyshot.png");
+	enemyshotimg1 = LoadGraph("enemyshot1.png");
+	enemyshotimg2 = LoadGraph("enemyshot2.png");
+	enemyshotimg3 = LoadGraph("enemyshot3.png");
+	enemyshotimg4 = LoadGraph("enemyshot004.png");
+	enemyshotimg5 = LoadGraph("enemyshot5.png");
+	bossshotimg = LoadGraph("bossshot.png");
 }
 bool canenemyshot(circle enemy)
 {
@@ -138,27 +148,27 @@ void drawenemyshot(void)
 	{
 		if (ene1shot[i].enable == true)
 		{
-			DrawExtendGraph(ene1shot[i].x - ene1shot[i].r, ene1shot[i].y - ene1shot[i].r, ene1shot[i].x + ene1shot[i].r, ene1shot[i].y + ene1shot[i].r, enemyshotimg, ene1shot[i].fill);
+			DrawExtendGraph(ene1shot[i].x - ene1shot[i].r, ene1shot[i].y - ene1shot[i].r, ene1shot[i].x + ene1shot[i].r, ene1shot[i].y + ene1shot[i].r, enemyshotimg1, ene1shot[i].fill);
 		}
 		if (ene2shot[i].enable == true)
 		{
-			DrawExtendGraph(ene2shot[i].x - ene2shot[i].r, ene2shot[i].y - ene2shot[i].r, ene2shot[i].x + ene2shot[i].r, ene2shot[i].y + ene2shot[i].r, enemyshotimg, ene2shot[i].fill);
+			DrawExtendGraph(ene2shot[i].x - ene2shot[i].r, ene2shot[i].y - ene2shot[i].r, ene2shot[i].x + ene2shot[i].r, ene2shot[i].y + ene2shot[i].r, enemyshotimg2, ene2shot[i].fill);
 		}
 		if (ene3shot[i].enable == true)
 		{
-			DrawExtendGraph(ene3shot[i].x - ene3shot[i].r, ene3shot[i].y - ene3shot[i].r, ene3shot[i].x + ene3shot[i].r, ene3shot[i].y + ene3shot[i].r, enemyshotimg, ene3shot[i].fill);
+			DrawExtendGraph(ene3shot[i].x - ene3shot[i].r, ene3shot[i].y - ene3shot[i].r, ene3shot[i].x + ene3shot[i].r, ene3shot[i].y + ene3shot[i].r, enemyshotimg3, ene3shot[i].fill);
 		}
 		if (ene4shot[i].enable == true)
 		{
-			DrawExtendGraph(ene4shot[i].x - ene4shot[i].r, ene4shot[i].y - ene4shot[i].r, ene4shot[i].x + ene4shot[i].r, ene4shot[i].y + ene4shot[i].r, enemyshotimg, ene4shot[i].fill);
+			DrawExtendGraph(ene4shot[i].x - ene4shot[i].r, ene4shot[i].y - ene4shot[i].r, ene4shot[i].x + ene4shot[i].r, ene4shot[i].y + ene4shot[i].r, enemyshotimg4, ene4shot[i].fill);
 		}
 		if (ene5shot[i].enable == true)
 		{
-			DrawExtendGraph(ene5shot[i].x - ene5shot[i].r, ene5shot[i].y - ene5shot[i].r, ene5shot[i].x + ene5shot[i].r, ene5shot[i].y + ene5shot[i].r, enemyshotimg, ene5shot[i].fill);
+			DrawExtendGraph(ene5shot[i].x - ene5shot[i].r, ene5shot[i].y - ene5shot[i].r, ene5shot[i].x + ene5shot[i].r, ene5shot[i].y + ene5shot[i].r, enemyshotimg5, ene5shot[i].fill);
 		}
 		if (bossshot[i].enable == true)
 		{
-			DrawExtendGraph(bossshot[i].x - bossshot[i].r, bossshot[i].y - bossshot[i].r, bossshot[i].x + bossshot[i].r, bossshot[i].y + bossshot[i].r, enemyshotimg, bossshot[i].fill);
+			DrawExtendGraph(bossshot[i].x - bossshot[i].r, bossshot[i].y - bossshot[i].r, bossshot[i].x + bossshot[i].r, bossshot[i].y + bossshot[i].r, bossshotimg, bossshot[i].fill);
 		}
 	}
 }
@@ -172,7 +182,7 @@ void straightshot1(int rad, circle enemy, int shiftx, int shifty)
 			ene1shot[j].y = enemy.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;
-			double speed = 3.0;
+			double speed = 2.5;
 			ene1shot[j].vx = speed * cos(minrad * rad);
 			ene1shot[j].vy = speed * sin(minrad * rad);
 			ene1shot[j].enable = true;
@@ -190,7 +200,7 @@ void straightshot2(int rad, circle enemy, int shiftx, int shifty)
 			ene2shot[j].y = enemy.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;
-			double speed = 3.5;
+			double speed = 1.7;
 			ene2shot[j].vx = speed * cos(minrad * rad);
 			ene2shot[j].vy = speed * sin(minrad * rad);
 			ene2shot[j].enable = true;
@@ -208,7 +218,7 @@ void straightshot3(int rad, circle enemy, int shiftx, int shifty)
 			ene3shot[j].y = enemy.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;
-			double speed = 2.5;
+			double speed = 1.25;
 			ene3shot[j].vx = speed * cos(minrad * rad);
 			ene3shot[j].vy = speed * sin(minrad * rad);
 			ene3shot[j].enable = true;
@@ -226,7 +236,7 @@ void straightshot4(int rad, circle enemy, int shiftx, int shifty)
 			ene4shot[j].y = enemy.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;
-			double speed = 3.0;
+			double speed = 1.5;
 			ene4shot[j].vx = speed * cos(minrad * rad);
 			ene4shot[j].vy = speed * sin(minrad * rad);
 			ene4shot[j].enable = true;
@@ -244,7 +254,7 @@ void straightshot5(int rad, circle enemy, int shiftx, int shifty)
 			ene5shot[j].y = enemy.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;
-			double speed = 5.0;
+			double speed = 2.5;
 			ene5shot[j].vx = speed * cos(minrad * rad);
 			ene5shot[j].vy = speed * sin(minrad * rad);
 			ene5shot[j].enable = true;
@@ -375,7 +385,7 @@ void aimshotboss(circle ene)
 		{
 			bossshot[j].x = ene.x;
 			bossshot[j].y = ene.y;
-			double speed = 3;
+			double speed = 1.5;
 			double dx = p.x - ene.x;
 			double dy = p.y - ene.y;
 			double d = sqrt(dx * dx + dy * dy);

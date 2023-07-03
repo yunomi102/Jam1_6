@@ -110,9 +110,18 @@ void updateenemy(void)
 		if (canenemyshot(ene1[i]) && ene1[i].enable == true)
 		{
 			aimshot1(ene1[i]);
-			straightshot1(170, ene1[i], 0, 0);
+			aimshot1(ene1[i]);
+			aimshot1(ene1[i]);
+			straightshot1(180, ene1[i], 0, 0);
+			straightshot1(120, ene1[i], 0, 0);
+			straightshot1(130, ene1[i], 0, 0);
+			straightshot1(140, ene1[i], 0, 0);
+			straightshot1(160, ene1[i], 0, 0);
+			straightshot1(150, ene1[i], 0, 0);
 			straightshot1(190, ene1[i], 0, 0);
-			ene1[i].time = 250;
+			straightshot1(210, ene1[i], 0, 0);
+			straightshot1(230, ene1[i], 0, 0);
+			ene1[i].time = 150;
 		}
 	}
 	for (int i = 0; i < enemynum2; i++)
@@ -124,10 +133,14 @@ void updateenemy(void)
 		if (canenemyshot(ene2[i]) && ene2[i].enable == true)
 		{
 			aimshot2(ene2[i]);
+			aimshot2(ene2[i]);
+			aimshot2(ene2[i]);
+			straightshot2(165, ene2[i], 0, 0);
 			straightshot2(175, ene2[i], 0, 0);
 			straightshot2(180, ene2[i], 0, 0);
 			straightshot2(185, ene2[i], 0, 0);
-			ene2[i].time = 250;
+			straightshot2(195, ene2[i], 0, 0);
+			ene2[i].time = 150;
 		}
 	}
 	for (int i = 0; i < enemynum3; i++)
@@ -139,11 +152,18 @@ void updateenemy(void)
 		if (canenemyshot(ene3[i]) && ene3[i].enable == true)
 		{
 			aimshot3(ene3[i]);
+			aimshot3(ene3[i]);
+			aimshot3(ene3[i]);
+			aimshot3(ene3[i]);
+			aimshot3(ene3[i]);
+			aimshot3(ene3[i]);
+			straightshot3(130,ene3[i], 0, 0);
+			straightshot3(140,ene3[i], 0, 0);
 			straightshot3(165, ene3[i], 0, 0);
 			straightshot3(175, ene3[i], 0, 0);
 			straightshot3(185, ene3[i], 0, 0);
 			straightshot3(195, ene3[i], 0, 0);
-			ene3[i].time = 250;
+			ene3[i].time = 150;
 		}
 	}
 	for (int i = 0; i < enemynum4; i++)
@@ -155,12 +175,17 @@ void updateenemy(void)
 		if (canenemyshot(ene4[i]) && ene4[i].enable == true)
 		{
 			aimshot4(ene4[i]);
+			straightshot4(30, ene4[i], 0, 0);
 			straightshot4(90, ene4[i], 0, 0);
-			straightshot4(135, ene4[i], 0, 0);
+			straightshot4(150, ene4[i], 0, 0);
+			straightshot4(210, ene4[i], 0, 0);
+			straightshot4(270, ene4[i], 0, 0);
+			straightshot4(330, ene4[i], 0, 0);
+			straightshot4(60, ene4[i], 0, 0);
 			straightshot4(180, ene4[i], 0, 0);
 			straightshot4(225, ene4[i], 0, 0);
 			straightshot4(270, ene4[i], 0, 0);
-			ene4[i].time = 250;
+			ene4[i].time = 150;
 		}
 	}
 	for (int i = 0; i < enemynum5; i++)
@@ -177,7 +202,7 @@ void updateenemy(void)
 			straightshot5(185, ene5[i], -6, 0);
 			straightshot5(180, ene5[i], -8, 0);
 			straightshot5(165, ene5[i], -10, 0);
-			ene5[i].time = 250;
+			ene5[i].time = 150;
 		}
 	}
 	if (boss.time > 0)
@@ -187,7 +212,11 @@ void updateenemy(void)
 	if (canenemyshot(boss) && boss.enable == true)
 	{
 		aimshotboss(boss);
+		aimshotboss(boss);
+		aimshotboss(boss);
 		straightshotboss(0, boss, 0, 0);
+		straightshotboss(20, boss, 0, 0);
+		straightshotboss(30, boss, 0, 0);
 		straightshotboss(45, boss, 0, 0);
 		straightshotboss(90, boss, 0, 0);
 		straightshotboss(135, boss, 0, 0);
@@ -195,7 +224,8 @@ void updateenemy(void)
 		straightshotboss(225, boss, 0, 0);
 		straightshotboss(270, boss, 0, 0);
 		straightshotboss(315, boss, 0, 0);
-		boss.time = 150;
+		straightshotboss(360, boss, 0, 0);
+		boss.time = 100;
 	}
 	if (p.enable == true)
 	{
@@ -251,7 +281,7 @@ void updateenemy(void)
 		{
 			for (int i = 0; i < enemynum5; i++)
 			{
-				ene5[i].x -= 3;
+				ene5[i].x -= 2;
 				if (ene5[i].x < -50 && ene5[i].enable == true)
 				{
 					ene5[i].enable = false;

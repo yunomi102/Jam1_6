@@ -36,6 +36,9 @@
     <ClCompile Include="enemyshot.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="effect.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h">
@@ -63,6 +66,9 @@
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="enemyshot.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="effect.h">
       <Filter>ヘッダーファイル</Filter>
     </ClInclude>
   </ItemGroup>

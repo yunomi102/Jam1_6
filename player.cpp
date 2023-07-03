@@ -8,9 +8,9 @@ void initplayer(void)
 {
 	p.x = 200;
 	p.y = 300;
-	p.vx = 1.5;
+	p.vx = 2;
 	p.vy = 2;
-	p.r = 20;
+	p.r = 15;
 	p.c = GetColor(255, 255, 255);
 	p.fill = true;
 	p.enable = true;

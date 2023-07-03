@@ -36,7 +36,7 @@ int hpuptime;
 void initsetting(void)
 {
 	collision = false;	   //当たり判定
-	playerhp = 5;          //プレイヤーのHP
+	playerhp = 6;          //プレイヤーのHP
 	playershotdamage1 = 30;//プレイヤーショット1のダメージ
 	playershotdamage2 = 1; //プレイヤーショット2のダメージ
 	pshotcooltime = 75;   //プレーヤーショットのクールタイム
@@ -45,7 +45,7 @@ void initsetting(void)
 	enemy2hp = 100;         //敵2のHP
 	enemy3hp = 150;         //敵3のHP
 	enemy4hp = 200;         //敵4のHP
-	enemy5hp = 250;         //敵5のHP
+	enemy5hp = 150;         //敵5のHP
 	bosshp = 1000;          //ボスのHP
 	enemy1r = 25;          //敵1の半径
 	enemy2r = 35;          //敵2の半径
@@ -56,21 +56,21 @@ void initsetting(void)
 	//敵1の座標
 	enemynum1x[0] = 1300;
 	enemynum1y[0] = 200;
-	enemynum1x[1] = 1820;
+	enemynum1x[1] = 1600;
 	enemynum1y[1] = 450;
-	enemynum1x[2] = 2150;
+	enemynum1x[2] = 1900;
 	enemynum1y[2] = 250;
-	enemynum1x[3] = 2400;
+	enemynum1x[3] = 2100;
 	enemynum1y[3] = 400;
-	enemynum1x[4] = 2850;
+	enemynum1x[4] = 2400;
 	enemynum1y[4] = 150;
-	enemynum1x[5] = 3100;
+	enemynum1x[5] = 2700;
 	enemynum1y[5] = 350;
-	enemynum1x[6] = 3250;
+	enemynum1x[6] = 3000;
 	enemynum1y[6] = 450;
-	enemynum1x[7] = 3600;
+	enemynum1x[7] = 3300;
 	enemynum1y[7] = 200;
-	enemynum1x[8] = 3750;
+	enemynum1x[8] = 3600;
 	enemynum1y[8] = 150;
 	enemynum1x[9] = 4000;
 	enemynum1y[9] = 500;
@@ -98,23 +98,23 @@ void initsetting(void)
 	//敵3の座標
 	enemynum3x[0] = 1300;
 	enemynum3y[0] = 200;
-	enemynum3x[1] = 1820;
+	enemynum3x[1] = 1600;
 	enemynum3y[1] = 450;
-	enemynum3x[2] = 2150;
+	enemynum3x[2] = 1900;
 	enemynum3y[2] = 250;
-	enemynum3x[3] = 2400;
+	enemynum3x[3] = 2100;
 	enemynum3y[3] = 400;
-	enemynum3x[4] = 2850;
+	enemynum3x[4] = 2300;
 	enemynum3y[4] = 150;
-	enemynum3x[5] = 3100;
+	enemynum3x[5] = 2500;
 	enemynum3y[5] = 350;
-	enemynum3x[6] = 3250;
+	enemynum3x[6] = 2700;
 	enemynum3y[6] = 450;
-	enemynum3x[7] = 3600;
+	enemynum3x[7] = 2900;
 	enemynum3y[7] = 200;
-	enemynum3x[8] = 3750;
+	enemynum3x[8] = 3100;
 	enemynum3y[8] = 150;
-	enemynum3x[9] = 4000;
+	enemynum3x[9] = 3300;
 	enemynum3y[9] = 500;
 	//敵4の座標
 	enemynum4x[0] = 1000;

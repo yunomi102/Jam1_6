@@ -15,8 +15,11 @@ int cscount;
 bool change;
 int stagechangeimg;
 
+int scenekirikae;
+
 void initstage(void)
 {
+	scenekirikae = LoadSoundMem("scenekirikae.mp3");
 	STtype = ST1;
 	stage1[0].stageimg = LoadGraph("stage01.png");
 	stage1[0].x = 0;
@@ -238,6 +241,7 @@ void drawstage(void)
 }
 void initchangestage(void)
 {
+	PlaySoundMem(scenekirikae, DX_PLAYTYPE_BACK);
 	cscount = 0;
 	for (int i = 0; i < changenum; i++)
 	{
@@ -253,7 +257,7 @@ void initchangestage(void)
 }
 void updatechangestage(void)
 {
-	if (STtype == ST1 && enemycount1 == 10)
+	if (STtype == ST1 && enemycount1 == 0)
 	{
 		initchangestage();
 		STtype = ST2;

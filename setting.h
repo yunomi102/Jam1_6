@@ -8,6 +8,7 @@
 #include"stage.h"
 #include"ishit.h"
 #include"game.h"
+#include"effect.h"
 
 extern bool collision;
 extern int playerhp;
