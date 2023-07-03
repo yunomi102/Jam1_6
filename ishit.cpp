@@ -95,7 +95,7 @@ void updateishit(void)
 				PlaySoundMem(ene1hitse, DX_PLAYTYPE_BACK);
 				if (ene1[j].hp <= 0)
 				{
-					explosion(ene1[i]);
+					explosion(ene1[j]);
 					ene1[j].enable = false;
 					enemycount1 -= 1;
 					score += 10;
@@ -111,7 +111,7 @@ void updateishit(void)
 				}
 				if (ene1[j].hp <= 0)
 				{
-					explosion(ene1[i]);
+					explosion(ene1[j]);
 					ene1[j].enable = false;
 					enemycount1 -= 1;
 					score += 10;
@@ -128,7 +128,7 @@ void updateishit(void)
 				PlaySoundMem(ene2hitse, DX_PLAYTYPE_BACK);
 				if (ene2[j].hp <= 0)
 				{
-					explosion(ene2[i]);
+					explosion(ene2[j]);
 					ene2[j].enable = false;
 					enemycount2 -= 1;
 					score += 20;
@@ -144,7 +144,7 @@ void updateishit(void)
 				}
 				if (ene2[j].hp <= 0)
 				{
-					explosion(ene2[i]);
+					explosion(ene2[j]);
 					ene2[j].enable = false;
 					enemycount2 -= 1;
 					score += 20;
@@ -161,7 +161,7 @@ void updateishit(void)
 				PlaySoundMem(ene3hitse, DX_PLAYTYPE_BACK);
 				if (ene3[j].hp <= 0)
 				{
-					explosion(ene3[i]);
+					explosion(ene3[j]);
 					ene3[j].enable = false;
 					enemycount3 -= 1;
 					score += 30;
@@ -177,7 +177,7 @@ void updateishit(void)
 				}
 				if (ene3[j].hp <= 0)
 				{
-					explosion(ene3[i]);
+					explosion(ene3[j]);
 					ene3[j].enable = false;
 					enemycount3 -= 1;
 					score += 30;
@@ -194,7 +194,7 @@ void updateishit(void)
 				PlaySoundMem(ene4hitse, DX_PLAYTYPE_BACK);
 				if (ene4[j].hp <= 0)
 				{
-					explosion(ene4[i]);
+					explosion(ene4[j]);
 					ene4[j].enable = false;
 					enemycount4 -= 1;
 					score += 40;
@@ -210,7 +210,7 @@ void updateishit(void)
 				}
 				if (ene4[j].hp <= 0)
 				{
-					explosion(ene4[i]);
+					explosion(ene4[j]);
 					ene4[j].enable = false;
 					enemycount4 -= 1;
 					score += 40;
@@ -227,7 +227,7 @@ void updateishit(void)
 				PlaySoundMem(ene5hitse, DX_PLAYTYPE_BACK);
 				if (ene5[j].hp <= 0)
 				{
-					explosion(ene5[i]);
+					explosion(ene5[j]);
 					ene5[j].enable = false;
 					enemycount5 -= 1;
 					score += 50;
@@ -243,7 +243,7 @@ void updateishit(void)
 				}
 				if (ene5[j].hp <= 0)
 				{
-					explosion(ene5[i]);
+					explosion(ene5[j]);
 					ene5[j].enable = false;
 					enemycount5 -= 1;
 					score += 50;
@@ -291,4 +291,18 @@ bool ishit(circle c1, circle c2)
 		return true;
 	}
 	return false;
+}
+void explosion(circle ene)
+{
+	for (int i = 0; i < EffectNum; i++)
+	{
+		if (effe[i].enable == false)
+		{
+			effe[i].enable = true;
+			effe[i].x = ene.x - 60;
+			effe[i].y = ene.y - 60;
+			effe[i].animeNo = 0;
+			break;
+		}
+	}
 }

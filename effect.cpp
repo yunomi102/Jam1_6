@@ -32,17 +32,3 @@ void drawEffect()
 		}
 	}
 }
-void explosion(circle ene)
-{
-	for (int i = 0; i < EffectNum; i++)
-	{
-		if (effe[i].enable == false)
-		{
-			effe[i].enable = true;
-			effe[i].x = ene.x - 60;
-			effe[i].y = ene.y - 60;
-			effe[i].animeNo = 0;
-			break;
-		}
-	}
-}

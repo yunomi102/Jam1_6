@@ -17,4 +17,3 @@ extern Effect effe[EffectNum];//エフェクト用の変数
 void initEffect();
 void updateEffect();
 void drawEffect();
-void explosion(circle ene);

@@ -111,6 +111,7 @@ void init(void)
 	initstage();
 	initgame();
 	initishit();
+	initEffect();
 	tutorialflag = true;
 	gameclearbgm = false;
 	gameoverbgm = false;
@@ -133,7 +134,7 @@ void update(void)
 	updategame();
 	updatechangestage();
 	updateishit();
-
+	updateEffect();
 	draw();
 }
 void draw(void)
@@ -144,6 +145,7 @@ void draw(void)
 	drawplayer();
 	drawenemy();
 	drawgame();
+	drawEffect();
 	drawchangestage();
 }
 void titleupdate(void)
