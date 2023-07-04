@@ -189,11 +189,11 @@ void updatesetting(void)
 		{
 			p.hp -= 1;
 			hpuptime = 0;
-			for(int i=0;i< playershotnum;i++)
+			for (int i = 0; i < playershotnum; i++)
 			{
-				pshot1[i].damage += playershotdamage1/5;
-				pshot2[i].damage +=0.5;
-				
+				pshot1[i].damage += playershotdamage1 / 5;
+				pshot2[i].damage += 0.5;
+
 			}
 		}
 	}

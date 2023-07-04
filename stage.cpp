@@ -17,7 +17,6 @@ int stagechangeimg;
 
 int scenekirikae;
 
-
 double x[50];
 double y[50];
 double vx[50];
@@ -147,7 +146,7 @@ void updatestage(void)
 		{
 			x[i] = GetRand(200) + 800;
 			y[i] = GetRand(600);
-			vx[i] = GetRand(7)+3;
+			vx[i] = GetRand(7) + 3;
 			vx[i] /= 5;
 			vy[i] = GetRand(11);
 			if (vy[i] > 5)
@@ -178,7 +177,9 @@ void drawstage(void)
 		DrawExtendGraph(stage2[1].x, stage2[1].y, stage2[1].x + 800, stage2[1].y + 600, stage2[1].stageimg, true);
 		for (int i = 0; i < 50; i++)
 		{
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
 			DrawExtendGraph(x[i] - r[i], y[i] - r[i], x[i] + r[i], y[i] + r[i], stagechangeimg, fill[i]);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 		if (cscount != 255)
 		{
@@ -284,13 +285,13 @@ void drawstage(void)
 			SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255 - cscount);
 			DrawExtendGraph(stage4[0].x, stage4[0].y, stage4[0].x + 800, stage4[0].y + 600, stage4[0].stageimg, true);
 			DrawExtendGraph(stage4[1].x, stage4[1].y, stage4[1].x + 800, stage4[1].y + 600, stage4[1].stageimg, true);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 			for (int i = 0; i < 50; i++)
 			{
 				SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
 				DrawExtendGraph(x[i] - r[i], y[i] - r[i], x[i] + r[i], y[i] + r[i], stagechangeimg, fill[i]);
 				SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 			}
-			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 		else if (cscount == 255)
 		{

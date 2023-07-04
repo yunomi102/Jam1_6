@@ -25,7 +25,9 @@ int titlelogo;
 int tutoriallogo;
 int gameclearlogo;
 int gameoverlogo;
-
+int tutoriallogo1;
+int tutoriallogo2;
+int tutoriallogo3;
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -118,6 +120,9 @@ void init(void)
 	titleback = LoadGraph("titleback.png");
 	titlelogo = LoadGraph("titlelogo.png");
 	tutoriallogo = LoadGraph("tutoriallogo.png");
+	tutoriallogo1 = LoadGraph("tutoriallogo1.png");
+	tutoriallogo2 = LoadGraph("tutoriallogo2.png");
+	tutoriallogo3 = LoadGraph("tutoriallogo3.png");
 	gameclearlogo = LoadGraph("gameclearlogo.png");
 	gameoverlogo = LoadGraph("gameoverlogo.png");
 	PlayMusic("startbgm.mp3", DX_PLAYTYPE_LOOP);
@@ -184,16 +189,10 @@ void tutorialupdate(void)
 		pushenter = false;
 	}
 	DrawExtendGraph(100, 100, 700, 250, tutoriallogo, true);
-	SetFontSize(50);
-	SetFontSize(55);
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
-	DrawString(235, 305, "移動:WASD", GetColor(0, 0, 0));
-	DrawString(235, 380, "ショット:SPACE", GetColor(0, 0, 0));
-	DrawString(235, 455, "加速:LSHIFT", GetColor(0, 0, 0));
-	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-	DrawString(250, 300, "移動:WASD", GetColor(255, 255, 255));
-	DrawString(250, 375, "ショット:SPACE", GetColor(255, 255, 255));
-	DrawString(250, 450, "加速:LSHIFT", GetColor(255, 255, 255));
+	DrawExtendGraph(200, 250, 600, 380, tutoriallogo1, true);
+	DrawExtendGraph(200, 350, 600, 480, tutoriallogo2, true);
+	DrawExtendGraph(200, 450, 600, 580, tutoriallogo3, true);
+	
 	SetFontSize(16);
 	DrawString(650, 500, "PUSH ENTER KEY", GetColor(255, 255, 255));
 }

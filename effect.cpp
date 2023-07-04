@@ -6,7 +6,7 @@ int img[10];//Å‘å‚P‚OƒRƒ}@‰æ‘œ
 void initEffect()
 {
 	//‰æ‘œ‚Ì“Ç‚İ‚İ
-	LoadDivGraph("effect.png", 5, 5, 1, 120, 120, img);
+	LoadDivGraph("effect04.png", 5, 5, 1, 120, 120, img);
 }
 void updateEffect()
 {

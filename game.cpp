@@ -10,9 +10,9 @@ int playerhpimg;
 void initgame(void)
 {
 	white = GetColor(255, 255, 255);
+	score = 0;
 	gameclearflag = false;
 	gameoverflag = true;
-	score = 0;
 	playerhpimg = LoadGraph("playerhp.png");
 }
 void updategame(void)
